@@ -1,0 +1,139 @@
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+.container {
+    max-width: 500px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+}
+
+header {
+    background-color: #283e4a;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px 8px 0 0;
+}
+
+header .logo {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+header nav a {
+    color: #fff;
+    margin: 0 8px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+header nav .login, header nav .signup {
+    padding: 7px 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+header nav .login:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+header nav .signup {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+}
+
+header nav .signup:hover {
+    background: linear-gradient(135deg, #0056b3, #003e7e);
+}
+
+h2 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+label {
+    font-size: 14px;
+    margin-top: 15px;
+    display: block;
+    color: #555;
+}
+
+textarea, input[type="file"], select, input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+textarea {
+    height: 80px;
+    resize: none;
+}
+
+textarea:focus, input[type="text"]:focus, select:focus {
+    border-color: #007bff;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #ff4b4b;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #d63a3a;
+}
+
+.incident-reports {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: #fafafa;
+    text-align: center;
+}
+
+.incident-reports h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 12px;
+    color: #555;
+    background-color: #283e4a;
+    color: #fff;
+    margin-top: 20px;
+    border-radius: 0 0 8px 8px;
+}
