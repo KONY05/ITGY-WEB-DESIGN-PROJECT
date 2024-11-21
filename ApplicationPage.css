@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --header-color: #6879C1;
+    --signUp_bg: #0A2187;
+    --submitColor: #FD4A4A;
+    --footerBg: #000000;
+    --white: #ffffff;
+    --box-shadow: #f9f9f9;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Header & Nav Section */
+.header {
+    background-color: #3a4ba8;
+    color: var(--white);
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logoImg{
+    width: 50px;
+}
+
+header nav a {
+    color: var(--white);
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header nav a:hover{
+    padding: 5px 10px;
+    border-radius: 3px;
+    background-color: var(--signUp_bg);
+}
+
+.signup {
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.nav a.signup {
+    background-color: var(--signUp_bg);
+}
+
+/* Main Section */
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
+}
+
+.container{
+    box-shadow: 5px 5px 3px;
+    padding: 7px 25px 35px;
+}
+
+h1{
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+textarea{
+    padding: 5px;
+}
+
+textarea, input, select{
+    margin-top: 7px;
+    margin-bottom: 15px;
+    /* box-shadow: 2px 2px 3px var(--box-shadow); */
+    outline: none;
+}
+
+input[type='file']{
+    border: 1px solid black;
+}
+
+select, input{
+    width: 420px;
+    padding: 6px 15px;
+}
+
+button{
+    width: 395px;
+    margin-top: 15px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    margin-inline: auto;
+    background-color: var(--submitColor);
+    border: none;
+    outline: none;
+}
+
+/* Collection Section */
+.collection{
+    border: 1px solid black;
+    margin-top: 40px;
+    width: 390px;
+    display: flex;
+    justify-content: center;
+    margin-inline: auto;
+
+}
+
+h2{
+    margin-top: 10px;
+    text-transform: capitalize;
+    font-weight: 400;
+    text-align: center;
+}
+
+.report{
+    height: 300px;
+    overflow: auto;
+}
+
+/* Footer Section */
+.footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+footer nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+footer nav a:hover{
+    color: grey;
+}

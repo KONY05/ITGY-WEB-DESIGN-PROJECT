@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --button-color: #6464FD;
+    --input-color: #D9D9D9;
+    --form-color: #575454a3;
+    --link-color: #0A2187;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--form-color);
+}
+
+.container {
+    display: flex;
+    width: 800px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.image-section {
+    width: 50%;
+    background-image: url('img/signup\ image.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.form-section {
+    width: 50%;
+    background-color: var(--form-color);
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    background-color: var(--input-color);
+}
+
+form input[type="password"] {
+    position: relative;
+}
+
+form button {
+    padding: 12px;
+    background-color: var(--button-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+form button:hover {
+    background-color: #357abd;
+}
+
+form p {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #fff;
+    text-align: center;
+}
+
+form p a {
+    color: #0A2187;
+    text-decoration: none;
+}
+
+form p a:hover {
+    text-decoration: underline;
+}

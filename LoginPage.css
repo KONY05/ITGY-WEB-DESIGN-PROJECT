@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --button-color: #6464FD;
+    --input-color: #D9D9D9;
+    --form-color: #575454a3;
+    --link-color: #0A2187;
+}
+
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Background and centering */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--form-color);
+}
+
+/* Container styling */
+.login-container {
+    display: flex;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    /* background: var(--form-color); */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Left image panel */
+.login-image {
+    flex: 1;
+    background-image: url('img/loginPage\ image.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* Right login form panel */
+h2{
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    font-weight: lighter;
+    color: black;
+}
+
+.login-form {
+    flex: 1;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--form-color);
+}
+
+/* Input styling */
+input{
+    background-color: var(--input-color);
+}
+
+.input-group {
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    padding-left: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    /* background-color: #f5f5f5; */
+}
+
+.input-group input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Button styling */
+.login-btn {
+    width: 100%;
+    padding: 12px 25px;
+    background-color: var(--button-color);
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #3a5fd3;
+}
+
+/* Forgot password link */
+.forgot-password {
+    margin-top: 15px;
+    color: var(--link-color);
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Profile icon */
+.profile-icon {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-icon img{
+    width: 50%;
+}
+
+/* Checkbox label alignment */
+.input-group label {
+    display: inline-block;
+    font-size: 14px;
+    color: #555;
+}
+
+#showPass{
+    color: black;
+    font-weight: bold;
+}
+
+/* Bottom form styling */
+.bottom{
+    display: flex;
+    column-gap: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom a{
+    text-wrap: nowrap;
+}
