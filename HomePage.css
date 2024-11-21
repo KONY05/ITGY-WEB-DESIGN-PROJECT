@@ -1,0 +1,160 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.header {
+    background-color: #3a4ba8;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img{
+    width: 20%;
+}
+
+.nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav a.login, .nav a.signup {
+    border: 1px solid white;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.nav a.signup {
+    background-color: #ffffff;
+    color: #3a4ba8;
+}
+
+.hero {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #e6e9f8;
+}
+
+.hero h1 {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #3a4ba8;
+}
+
+.hero p {
+    margin: 15px 0;
+}
+
+.emergency-btn {
+    background-color: #3a4ba8;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.secure {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.secure h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.secure p {
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.shield-icon {
+    width: 50px;
+    margin: 20px 0;
+}
+
+.report {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.report h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.report-btn {
+    background-color: #3a4ba8;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.report-info {
+    padding: 30px 20px;
+    background-color: #f9f9f9;
+}
+
+.report-info h3 {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.report-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.report-details p {
+    line-height: 1.6;
+    flex: 1;
+}
+
+.security-image {
+    width: 250px;
+    border-radius: 8px;
+}
+
+.footer {
+    background-color: #3a4ba8;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.footer nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 0.9em;
+}

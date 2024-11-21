@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlertNet - Application Page</title>
+    <link rel="stylesheet" href="ApplicationPage.css">
+</head>
+<body>
+    <header class="header">
+        <img src="img/logo.png" alt="AlertNet Logo" id="logoImg">
+        <nav class="nav">
+            <a href="HomePage.html">Home</a>
+            <a href="AboutPage.html">About</a>
+            <a href="SafetyTipsPage.html">Safety Tips</a>
+            <a href="SupportPage.html">Support</a>
+            <a href="LoginPage.html">Log In</a>
+            <a href="SignupPage.html" class="signup">Sign Up</a>
+        </nav>
+    </header>
+
+    <!-- Main Application -->
+    <main>
+        <section class="container">
+            <h1>report suspicious activity</h1>
+
+            <div class="reportInfo">
+                <form class="reportForm">
+                    <label for="description">Describe the incident</label><br>
+                    <textarea name="incidentDesc" id="description" placeholder="Provide a description..." cols="60" rows="5"></textarea><br>
+
+                    <label for="uploadedMedia">Upload Media(Photo, Videos, Audio):</label><br>
+                    <input type="file" id="uploadedMedia"><br>
+
+                    <label for="inicidentClass">Incident Classification</label><br>
+                    <select>
+                        <option value="terrorism">Terrorism</option>
+                        <option value="theft">Theft</option>
+                        <option value="violence">Violence</option>
+                        <option value="suspicious_activity">Suspicious Activity</option>
+                        <option value="other">Other</option>
+                    </select><br>
+                    
+                    <label for="urgencyLvl">Urgency Level</label><br>
+                    <select>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                        <option value="critical">Critical</option>
+                    </select><br>
+
+                    <label for="location">Location</label><br>
+                    <input type="text" placeholder="Enter your location here..."><br>
+
+                    <label for="time">Is this event happening right now?</label><br>
+                    <select>
+                        <option value="realTime">Real-Time</option>
+                        <option value="not_real_time">Not Real-Time</option>
+                    </select><br>
+
+                    <button type="submit" id="submit">Submit Report</button>
+                </form>
+            </div>
+
+            <section class="collection">
+                <h2>incident reports</h2>
+                <div class="report"></div>
+            </section>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>© 2024 ALERTNET INC, All Rights Reserved</p>
+        <nav>
+            <a href="#">Privacy Policy</a>
+            <a href="SupportPage.html">Support</a>
+            <a href="AboutPage.html">About</a>
+            <a href="ContactPage.html">Contact</a>
+        </nav>
+    </footer>
+</body>
+</html>
