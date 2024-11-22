@@ -4,57 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AlertNet Homepage</title>
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="HomePage.css">
 </head>
 <body>
     <header class="header">
-        <div class="logo">
-            <img src="img/logo.png" alt="ALERTNET logo">
-        </div>  
-          <nav class="nav">
-            <a href="HomePage.html" class="active">Home</a>
-            <a href="AboutPage.html">About</a>
-            <a href="SafetyTipsPage.html">Safety Tips</a>
-            <a href="SupportPage.html">Support</a>
-            <a href="LoginPage.html">Log In</a>
-            <a href="SignupPage.html" class="signup">Sign Up</a>
+        <img src="img/logo.png" alt="AlertNet Logo" id="logoImg">
+        <nav class="nav">
+            <a href="HomePage.html" id="active">Home</a>
+            <a href="AboutPage.html" target="_blank">About</a>
+            <a href="SafetyTipsPage.html" target="_blank">Safety Tips</a>
+            <a href="SupportPage.html" target="_blank">Support</a>
         </nav>
+        <div class="header_btns">
+            <button id="login"><a href="LoginPage.html">Log In</a></button>
+            <button class="signup"><a href="SignupPage.html">Sign Up</a></button>
+        </div>
     </header>
+    <main>
+        <!--Section One-->
+        <section class="sec1">
+            <div class="hero">
+                <h1>STAY SAFE, ACT SWIFTLY -<br>REPORT SUSPICIOUS<br>ACTIVITIES</h1>
+                <p>Protect your community by reporting incidents like<br>terrorism, kidnapping and more in real time</p>
+                <button class="emergency-btn"><a href="#">call emergency</a></button>
+            </div>
+            <div class="info">
+                <img src="img/logo.png" alt="AlertNet logo">
+                <h2>Secure your community with ALERTNET</h2>
+                <p>At Alertnet, we are dedicated to making your community safer by providing a reliable platform for reporting suspicious activities. Whether you witness a potential act of terrorism, kidnapping, or any other alarming event, our system empowers you to take action.</p>
+            </div>
+            <div class="reportOnline_div">
+                <div class="onlineRep_left">
+                    <h2 id="report_header">report online</h2>
+                    <p>It only takes a few minutes to make a report online. <br> Every year thousands of reports from the public help the <br> police keep communities and families safe from terrorism, kidnapping, and other social vices. <br> Every time you need police assistance in an emergency, contact us immediately.</p>
+                    <button class="report-btn"><a href="ApplicationPage.html" target="_blank">report here</a></button>
+                </div>
+                <img src="img/report image.png" alt="">
+            </div>
+        </section>
 
-    <section class="hero">
-        <h1>STAY SAFE, ACT SWIFTLY - REPORT SUSPICIOUS ACTIVITIES</h1>
-        <p>Protect your community by reporting incidents like terrorism, kidnapping and more in real time</p>
-        <button class="emergency-btn">Call Emergency</button>
-    </section>
+        <!--Section Two-->
+        <section class="sec2">
+            <h3>Stay Vigilant with Alertnet</h3>
+            <p>Report suspicious activities like crime, violence, potential kidnappings,<br> or terrorism to help keep your community safe. <br>Share details, photos, and locations to assist authorities in preventing harm. <br>If something feels out of place, act—your report could make all the difference.</p>
+        </section>
 
-    <section class="secure">
-        <img src="img/logo.png" alt="ALERTNET logo" class="shield-icon">
-        <h2>Secure your community with ALERTNET</h2>
-        <p>At Alertnet, we are dedicated to making your community safer by providing a reliable platform for reporting suspicious activities. Whether you witness a potential act of terrorism, kidnapping, or any other alarming event, our system empowers you to take action.</p>
+        <!--Section Three-->
+        <section class="sec3">
+            <div class="sec3_container">
+                <div class="sec3_left">
+                    <h3 id="sec3_header">How Alertnet Works</h3>
+                    <p>Your report is processed instantly, categorized by urgency, <br> and shared with local authorities. Nearby users can verify or <br> add details, boosting accuracy. Real-time and critical incidents are prioritized <br> for swift action, ensuring your submission enhances community safety.</p>
+                </div>
+                <img src="img/police officer.png" alt="">
+            </div>
+        </section>
+    </main>
 
-        <div class="report">
-            <h3>REPORT ONLINE</h3>
-            <p>It only takes a few minutes to make a report online. Every year thousands of reports from the public help the police keep communities and families safe from terrorism, kidnapping, and other social vices. Every time you need police assistance in an emergency, contact us immediately.</p>
-            <button class="report-btn">REPORT HERE</button>
+    <!--Footer Section-->
+    <footer>
+        <img src="img/logo.png" alt="ALERTNET logo">
+        <div class="footer_div">
+            <nav>
+                <a href="#">Privacy Policy</a>
+                <a href="SupportPage.html">Support</a>
+                <a href="AboutPage.html">About</a>
+                <a href="ContactPage.html">Contact</a>
+            </nav>
         </div>
-    </section>
-
-    <section class="report-info">
-        <h3>What should I report?</h3>
-        <div class="report-details">
-            <p>In Alertnet, reporting suspicious activity is key to ensuring community safety. Users are encouraged to report incidents like criminal activity, violence, public safety concerns, terrorism-related behaviors, potential kidnappings, and threats to infrastructure. Additionally, any unusual or out-of-place behavior should be noted. By providing authorities with detailed information, such as photos and location data, users can help create a safer environment and potentially prevent harmful incidents. Remember, if you see something concerning, report it through Alertnet—your vigilance could make a crucial difference in keeping the community secure.</p>
-            <img src="security-officer.jpg" alt="Security Officer" class="security-image">
-        </div>
-    </section>
-
-    <footer class="footer">
         <p>© 2024 ALERTNET INC, All Rights Reserved</p>
-        <nav>
-            <a href="#">Privacy Policy</a>
-            <a href="SupportPage.html">Support</a>
-            <a href="AboutPage.html">About</a>
-            <a href="ContactPage.html">Contact</a>
-        </nav>
     </footer>
 </body>
 </html>

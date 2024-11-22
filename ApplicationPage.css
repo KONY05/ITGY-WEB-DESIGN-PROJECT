@@ -7,6 +7,7 @@
     --footerBg: #000000;
     --white: #ffffff;
     --box-shadow: #f9f9f9;
+    --body-background: #B9B9B9;
 }
 
 *{
@@ -16,9 +17,17 @@
     font-family: 'Roboto', sans-serif;
 }
 
+body{
+    background-color: var(--body-background);
+}
+
+.hidden{
+    display: none !important;
+}
+
 /* Header & Nav Section */
 .header {
-    background-color: #3a4ba8;
+    background-color: var(--header-color);
     color: var(--white);
     padding: 15px 30px;
     display: flex;
@@ -33,23 +42,45 @@
 header nav a {
     color: var(--white);
     margin: 0 10px;
-    text-decoration: none;
-    font-weight: bold;
 }
 
 .header nav a:hover{
     padding: 5px 10px;
-    border-radius: 3px;
+    border-radius: 5px;
     background-color: var(--signUp_bg);
 }
+
+.signup, #login{
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+button a, header nav a{
+    text-decoration: none;
+    font-weight: bold;
+}
+
 
 .signup {
-    padding: 5px 10px;
-    border-radius: 3px;
+    padding: 8px 15px;
+    border-radius: 10px;
+    background-color: var(--signUp_bg);
+    color: var(--white);
 }
 
-.nav a.signup {
-    background-color: var(--signUp_bg);
+#login{
+    color: var(--footerBg);
+    background-color: transparent;
+    margin: 0 10px;
+}
+
+.signup a:visited{
+    color: var(--white);
+}
+
+#login a:visited{
+    color: var(--footerBg);
 }
 
 /* Main Section */
@@ -61,6 +92,7 @@ main{
 }
 
 .container{
+    background-color: var(--white);
     box-shadow: 5px 5px 3px;
     padding: 7px 25px 35px;
 }
@@ -90,7 +122,11 @@ select, input{
     padding: 6px 15px;
 }
 
-button{
+.sus_activity{
+    display: block;
+}
+
+#button{
     width: 395px;
     margin-top: 15px;
     padding: 10px 15px;
@@ -101,6 +137,7 @@ button{
     background-color: var(--submitColor);
     border: none;
     outline: none;
+    cursor: pointer;
 }
 
 /* Collection Section */

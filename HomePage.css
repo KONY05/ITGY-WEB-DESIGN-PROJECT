@@ -1,160 +1,229 @@
-/* Reset some default styles */
-* {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --header-color: #6879C1;
+    --signUp_bg: #0A2187;
+    --button-text: #FD4A4A;
+    --black: #000000;
+    --white: #ffffff;
+    --section-background: #B9B9B9;
+}
+
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #f9f9f9;
+#active{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: var(--signUp_bg);
+}
+
+a:visited{
+    color: inherit;
 }
 
 .header {
-    background-color: #3a4ba8;
-    color: white;
+    background-color: var(--header-color);
+    color: var(--white);
     padding: 15px 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.logo img{
-    width: 20%;
-}
-
-.nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.nav a.login, .nav a.signup {
-    border: 1px solid white;
-    padding: 5px 10px;
-    border-radius: 3px;
-}
-
-.nav a.signup {
-    background-color: #ffffff;
-    color: #3a4ba8;
-}
-
-.hero {
-    text-align: center;
-    padding: 30px 20px;
-    background-color: #e6e9f8;
-}
-
-.hero h1 {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: #3a4ba8;
-}
-
-.hero p {
-    margin: 15px 0;
-}
-
-.emergency-btn {
-    background-color: #3a4ba8;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.secure {
-    text-align: center;
-    padding: 30px 20px;
-}
-
-.secure h2 {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.secure p {
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-.shield-icon {
+#logoImg{
     width: 50px;
-    margin: 20px 0;
 }
 
-.report {
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
-    text-align: center;
+header nav a {
+    color: var(--white);
+    margin: 0 10px;
 }
 
-.report h3 {
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-.report-btn {
-    background-color: #3a4ba8;
-    color: white;
-    padding: 10px 20px;
-    border: none;
+.header nav a:hover{
+    padding: 5px 10px;
     border-radius: 5px;
-    cursor: pointer;
+    background-color: var(--signUp_bg);
+}
+
+.signup, #login{
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+button a, header nav a, footer nav a{
+    text-decoration: none;
     font-weight: bold;
-    margin-top: 10px;
 }
 
-.report-info {
-    padding: 30px 20px;
-    background-color: #f9f9f9;
+.signup {
+    padding: 8px 15px;
+    border-radius: 10px;
+    background-color: var(--signUp_bg);
+    color: var(--white);
 }
 
-.report-info h3 {
+#login{
+    color: var(--black);
+    background-color: transparent;
+    margin: 0 10px;
+}
+
+/* Section One Styling */
+.sec1{
+    padding: 70px 150px 80px;
+}
+
+.hero{
+    width: fit-content;
+    margin-bottom: 30px;
+}
+
+h1{
+    font-size: 54px;
+    margin-bottom: 5px;
+}
+
+.hero p{
+    font-size: 26px;
+    margin-bottom: 54px;
+}
+
+.emergency-btn{
+    background-color: var(--signUp_bg);
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.emergency-btn a{
+    color: white;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+/* Info styling */
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info img, .info h2{
+    margin-bottom: 20px;
+}
+
+.info h2{
+    font-size: 34px;
+}
+
+.info p{
     text-align: center;
-    font-size: 1.5em;
+    width: 90%;
+    margin-bottom: 35px;
+}
+
+/* Report Online Div */
+.reportOnline_div, .sec3_container{
+    background-color: var(--section-background);
+    border: 2px solid var(--black);
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px var(--section-background);
+    display: flex;
+    justify-content: space-between;
+    padding: 59px 50px;
+}
+
+.reportOnline_div img, .sec3_container img{
+    width: 30%;
+}
+
+.onlineRep_left, .sec3_left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#report_header{
+    text-transform: uppercase;
     margin-bottom: 15px;
 }
 
-.report-details {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 800px;
-    margin: 0 auto;
-    gap: 20px;
-}
-
-.report-details p {
-    line-height: 1.6;
-    flex: 1;
-}
-
-.security-image {
-    width: 250px;
-    border-radius: 8px;
-}
-
-.footer {
-    background-color: #3a4ba8;
-    color: white;
+.onlineRep_left p, .sec3_left p{
     text-align: center;
-    padding: 15px;
-    margin-top: 20px;
+    line-height: 25px;
+    margin-bottom: 20px;
 }
 
-.footer nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-    font-size: 0.9em;
+.report-btn{
+    color: var(--button-text);
+    text-transform: uppercase;
+    border: 2px solid var(--black);
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 17px 31px;
+}
+
+/* Section Two Styling */
+.sec2{
+    padding: 105px 150px;
+    background-image: url(img/security\ man\ background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    line-height: 25px;
+}
+
+.sec2 h3, #sec3_header{
+    margin-bottom: 20px;
+    font-size: 34px;
+}
+
+.sec2 p{
+    font-weight: 500;
+}
+
+/* Section Three Styling */
+.sec3{
+    padding: 80px 150px;
+}
+
+/* Footer Section */
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer img{
+    width: 12%;
+    margin-bottom: 30px;
+}
+
+footer nav{
+    display: flex;
+    column-gap: 30px;
+    margin-bottom: 25px;
+}
+
+footer nav a{
+    color: var(--black);
+}
+
+.footer_div{
+    border-bottom: 2px solid var(--section-background);
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer p{
+    margin: 25px 0;
 }

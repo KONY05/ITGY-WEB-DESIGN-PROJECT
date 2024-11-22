@@ -4,36 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About AlertNet</title>
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="AboutPage.css">
 </head>
 <body>
     <!-- Navigation Bar -->
-    <header>
-        <div class="navbar">
-            <div class="logo">
-                <img src="img/logo.png" alt="ALERTNET logo">
-                ALERTNET</div>
-            <nav>
-                <a href="HomePage.html">Home</a>
-                <a href="AboutPage.html" class="active">About</a>
-                <a href="SafetyTipsPage.html">Safety Tips</a>
-                <a href="SupportPage.html">Support</a>
-                <a href="LoginPage.html">Log In</a>
-                <a href="SignupPage.html" class="signup">Sign Up</a>
-            </nav>
+    <header class="header">
+        <img src="img/logo.png" alt="AlertNet Logo" id="logoImg">
+        <nav class="nav">
+            <a href="HomePage.html" target="_blank">Home</a>
+            <a href="AboutPage.html" id="active">About</a>
+            <a href="SafetyTipsPage.html" target="_blank">Safety Tips</a>
+            <a href="SupportPage.html" target="_blank">Support</a>
+        </nav>
+        <div class="header_btns">
+            <button id="login"><a href="LoginPage.html">Log In</a></button>
+            <button class="signup"><a href="SignupPage.html">Sign Up</a></button>
         </div>
     </header>
 
     <!-- Main Content -->
-    <div class="content">
+    <section class="content">
         <!-- Our Mission -->
-        <section class="mission">
+        <div class="mission">
             <h2>Our Mission</h2>
             <p>Our mission at Alertnet is to provide your web-based tool for reporting suspicious activities to help keep your community safe from harm and help protect regular civilians.</p>
-        </section>
+        </div>
 
         <!-- Key Features -->
-        <section class="features">
+        <div class="features">
             <h2>Key Features</h2>
             <ul>
                 <li>✔ <strong>Incident Classification:</strong> Categorize incidents like terrorism, kidnapping, or robbery to help authorities prioritize reports.</li>
@@ -42,52 +41,52 @@
                 <li>✔ <strong>Emergency Call Button:</strong> Instantly contact law enforcement or emergency services as needed.</li>
                 <li>✔ <strong>Time-sensitive Reporting:</strong> Specify whether an incident is happening now or is a past event.</li>
             </ul>
-        </section>
+        </div>
 
         <!-- Our Vision -->
-        <section class="vision">
+        <div class="vision">
             <h2>Our Vision</h2>
             <p>We envision a world where communities feel safe, informed, and connected. Through Alertnet, citizens and authorities can collaborate to respond to potential threats swiftly and reliably, making our communities safer for everyone.</p>
-        </section>
+        </div>
 
         <!-- How It Works -->
-        <section class="how-it-works">
+        <div class="how-it-works">
             <h2>How It Works</h2>
-            <p>Creating an Account and Logging In: To get started, users must create an account, providing basic information such as their name, email, and phone number...</p>
-            <p>Report Submission: When a user witnesses a suspicious activity, they can initiate a report by clicking the "Report" button...</p>
-            <p>Setting Urgency and Time Sensitivity: Users mark the report’s urgency, distinguishing time-sensitive issues from general concerns...</p>
-            <p>Crowdsourced Verification: Once submitted, the report becomes visible to other users in the vicinity...</p>
-            <p>Immediate Emergency Contact Option: For emergencies, the platform includes a prominent "Emergency Call" button...</p>
-        </section>
+            <p><strong>Creating an Account and Logging In:</strong> To get started, users must create an account, providing basic information such as their name, email, and phone number. This helps verify user identities and ensure report accuracy. Once registered, users can log in to access the platform’s features.</p>
+            <p><strong>Report Submission:</strong> When a user witnesses a suspicious activity, they can initiate a report by clicking the "Report" button. The platform then guides them through a submission form to ensure they provide complete and accurate information. Users also provide a brief description of the incident, outlining what they observed and any other pertinent details. Users can manually enter the location or use GPS for automatic location tagging, ensuring reports are location-specific. The system allows users to categorize incidents (e.g., terrorism, robbery, kidnapping) so authorities can quickly identify and respond to high-priority events. Users can upload photos, videos, or audio recordings to give authorities more context and details on the situation</p>
+            <p><strong>Setting Urgency and Time Sensitivity:</strong> Users mark the report’s urgency, distinguishing time-sensitive issues from general concerns. This helps prioritize cases that may require immediate intervention. Users indicate whether the incident is happening in real-time or occurred in the past. This helps authorities respond based on the timeline and urgency of each report.</p>
+            <p><strong>Crowdsourced Verification:</strong> Once submitted, the report becomes visible to other users in the vicinity. Community members can verify the incident or provide additional insights, which helps authorities gauge the report’s credibility. Verified reports receive higher priority, enabling a crowdsourced approach to confirm the validity of incidents.</p>
+            <p><strong>Immediate Emergency Contact Option:</strong> For emergencies, the platform includes a prominent "Emergency Call" button that connects users directly to local law enforcement or emergency services. This feature allows witnesses to quickly get help in critical situations while submitting their report.</p>
+        </div>
 
         <!-- Privacy and Security -->
-        <section class="privacy-security">
+        <div class="privacy-security">
             <h2>Privacy and Security</h2>
             <p>We prioritize user privacy and secure data through encrypted servers. Personal information is not shared with third parties without consent...</p>
-        </section>
+        </div>
 
         <!-- Frequently Asked Questions -->
-        <section class="faq">
+        <div class="faq">
             <h2>Frequently Asked Questions</h2>
-            <p><strong>Is my personal information secure on Alertnet?</strong> Yes, we prioritize user privacy and data security...</p>
-            <p><strong>Can I submit a report anonymously?</strong> Currently, users are required to register and log in to submit reports...</p>
-            <p><strong>How do I verify someone else's report?</strong> If you see a report that matches an incident you witnessed...</p>
-            <p><strong>Can I delete a report after submitting it?</strong> Yes, you can delete a report if you realize it's no longer relevant...</p>
-        </section>
-    </div>
+            <p><strong>Is my personal information secure on Alertnet?</strong><br> Yes, we prioritize user privacy and data security. Your personal information is stored securely on our servers and is only accessible by authorized personnel. We use encryption and other security measures to protect your data from unauthorized access</p>
+            <p><strong>Can I submit a report anonymously?</strong><br> Currently, users are required to register and log in to submit reports. This ensures accountability and prevents misuse of the platform. However, your identity remains confidential and is not shared publicly unless required by law.</p>
+            <p><strong>How do I verify someone else's report?</strong><br> If you see a report that matches an incident you witnessed or have additional details about, you can add your own observations or verify the accuracy of the report. This verification helps authorities prioritize credible incidents and builds community trust.</p>
+            <p><strong>Can I delete a report after submitting it?</strong><br> Yes, you can delete a report if you realize it’s no longer relevant or necessary. However, this option is only available for a limited time, and frequent deletions may result in limited access to the platform.</p>
+        </div>
+    </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-logo">
-            <img src="img/logo.png" alt="AlertNet Logo">
+     <!--Footer Section-->
+     <footer>
+        <img src="img/logo.png" alt="ALERTNET logo">
+        <div class="footer_div">
+            <nav>
+                <a href="#">Privacy Policy</a>
+                <a href="SupportPage.html">Support</a>
+                <a href="AboutPage.html">About</a>
+                <a href="ContactPage.html">Contact</a>
+            </nav>
         </div>
-        <div class="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="SupportPage.html">Support</a>
-            <a href="AboutPage.html">About</a>
-            <a href="ContactPage.html">Contact</a>
-        </div>
-        <p>&copy; 2024 ALERTNET INC. All Rights Reserved.</p>
+        <p>© 2024 ALERTNET INC, All Rights Reserved</p>
     </footer>
 </body>
 </html>

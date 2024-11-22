@@ -50,7 +50,7 @@ body {
 .form-section h2 {
     font-size: 1.5em;
     margin-bottom: 20px;
-    color: #333;
+    color: #000;
 }
 
 form {
@@ -76,7 +76,7 @@ form button {
     background-color: var(--button-color);
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 1em;
     cursor: pointer;
     margin-top: 10px;
@@ -96,6 +96,7 @@ form p {
 form p a {
     color: #0A2187;
     text-decoration: none;
+    font-weight: bold;
 }
 
 form p a:hover {

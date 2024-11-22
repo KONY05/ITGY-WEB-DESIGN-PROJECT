@@ -1,65 +1,108 @@
-/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --header-color: #6879C1;
+    --signUp_bg: #0A2187;
+    --submitColor: #FD4A4A;
+    --black: #000000;
+    --white: #ffffff;
+    --box-shadow: #f9f9f9;
+    --body-background: #B9B9B9;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-.navbar {
-    background-color: #b0c4de;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-weight: bold;
-    font-size: 22px;
-}
-
-.navbar nav a {
-    color: #333;
-    margin: 0 10px;
-    text-decoration: none;
-    font-size: 15px;
-}
-
-.navbar .active {
-    font-weight: bold;
-    color: #007bff;
-}
-
-.navbar .signup {
-    background-color: #007bff;
-    color: #fff;
-    padding: 8px 12px;
+#active{
+    padding: 5px 10px;
     border-radius: 5px;
+    background-color: var(--signUp_bg);
 }
 
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--white);
+    color: #333;
+}
+
+/* Header Section */
+.header {
+    background-color: var(--header-color);
+    color: var(--white);
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logoImg{
+    width: 50px;
+}
+
+header nav a {
+    color: var(--white);
+    margin: 0 10px;
+}
+
+.header nav a:hover{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: var(--signUp_bg);
+}
+
+.signup, #login{
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+button a, header nav a{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup {
+    padding: 8px 15px;
+    border-radius: 10px;
+    background-color: var(--signUp_bg);
+    color: var(--white);
+}
+
+#login{
+    color: var(--black);
+    background-color: transparent;
+    margin: 0 10px;
+}
+
+.signup a:visited{
+    color: var(--white);
+}
+
+#login a:visited{
+    color: var(--black);
+}
+
+/* Content Section */
 .content {
     padding: 30px;
     max-width: 800px;
     margin: 0 auto;
-    background-color: #fff;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: var(--white);
+    /* box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); */
 }
 
 h2 {
     font-size: 24px;
-    color: #333;
+    color: var(--black);
     margin-bottom: 15px;
 }
 
 p {
     line-height: 1.6;
-    color: #555;
+    color: var(--black);
     margin-bottom: 20px;
 }
 
@@ -74,38 +117,45 @@ ul li {
     font-size: 16px;
 }
 
-ul li::before {
-    content: "✔ ";
-    color: green;
+/* Footer Styling */
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-footer {
-    background-color: #f4f4f4;
-    padding: 20px;
-    text-align: center;
-    color: #555;
-    font-size: 14px;
-    border-top: 1px solid #ddd;
+footer img{
+    width: 8%;
+    margin-bottom: 30px;
 }
 
-.footer-logo img {
-    width: 15%;
-        height:auto;
+footer nav{
+    display: flex;
+    column-gap: 30px;
+    margin-bottom: 25px;
 }
 
-.footer-links a {
-    margin: 0 10px;
-    color: #333;
+footer nav a{
+    color: var(--black);
+}
+
+.footer_div{
+    border-bottom: 2px solid var(--body-background);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer p{
+    margin: 25px 0;
+}
+
+footer nav a{
     text-decoration: none;
-    font-size: 14px;
+    font-weight: bold;
 }
 
-.footer-links a:hover {
-    text-decoration: underline;
-}
-
-footer p {
-    margin-top: 10px;
-    font-size: 12px;
-    color: #777;
+footer nav a:hover{
+    color: var(--header-color);
 }

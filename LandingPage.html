@@ -4,62 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AlertNet - Secure Your Community</title>
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="LandingPage.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Header Section -->
-        <header>
-            <div class="header-content">
-                <img src="img/logo.png" alt="ALERTNET logo">
-                <nav>
-                    <a href="AlertNet login.html" class="login">Log In</a>
-                    <a href="AlertNet Sign-in.html" class="signup">Sign Up</a>
-                </nav>
+    <header class="header">
+        <div class="nav">
+            <div class="logo">
+                <img src="img/logo.png" alt="AlertNet Logo" id="logoImg">
+                <p>ALERTNET</p>
             </div>
-            <div class="hero">
-                <h1>SECURE YOUR COMMUNITY WITH ALERTNET</h1>
-                <p>Report suspicious activities in real time and help authorities take immediate action together. Together we can make our communities safer.</p>
-                <a href="#" class="get-started-btn">Get Started</a>
+            <div class="header_btns">
+                <button id="login"><a href="LoginPage.html">Log In</a></button>
+                <button class="signup"><a href="SignupPage.html">Sign Up</a></button>
             </div>
-        </header>
+        </div>
 
-        <!-- Features Section -->
-        <section class="features">
-            <h2>Key features</h2>
-            <div class="features-grid">
-                <div class="feature-box">
-                    <h3>Multimedia support</h3>
-                    <p>Submit photos, videos and audios to provide detailed information.</p>
-                </div>
-                <div class="feature-box">
-                    <h3>Incident Classification</h3>
-                    <p>Categorize incidents like terrorism, kidnapping, robbery and more.</p>
-                </div>
-                <div class="feature-box">
-                    <h3>Emergency call button</h3>
-                    <p>Call law enforcement instantly for urgent cases.</p>
-                </div>
-                <div class="feature-box">
-                    <h3>Urgency Indicator</h3>
-                    <p>Mark the urgency level to help prioritize responses effectively.</p>
-                </div>
-            </div>
-        </section>
+        <!--Hero Section-->
+        <div class="hero">
+            <h1>SECURE YOUR COMMUNITY WITH ALERTNET</h1>
+            <p>Report suspicious activities in real time and help authorities take <br> immediate action together. Together we can make our communities <br> safer.</p>
+            <a href="HomePage.html" target="_blank" class="getStarted-btn"><button>get started</button></a>
+        </div>
+    </header>
 
-        <!-- Footer Section -->
-        <footer>
-            <div class="footer-logo">
-                <img src="img/logo.png" alt="AlertNet Logo">
+    <!--Main Section-->
+    <main>
+        <h2>key features</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <h3>multimedia support</h3>
+                <p>Submit photos, videos and <br> audios to provide detailed <br> information.</p>
             </div>
-            <div class="footer-links">
+            <div class="feature">
+                <h3>incident classification</h3>
+                <p>Categorize incidents like <br> terrorism, kidnapping, robbery <br> and more.</p>
+            </div>
+            <div class="feature">
+                <h3>emergency call button</h3>
+                <p>Call law enforcement instantly <br> for urgent cases.</p>
+            </div>
+            <div class="feature">
+                <h3>urgency indicator</h3>
+                <p>Mark the urgency level to help <br> prioritize responses effectively.</p>
+            </div>
+        </div>
+    </main>
+
+    <!--Footer Section-->
+    <footer>
+        <img src="img/logo.png" alt="ALERTNET logo">
+        <div class="footer_div">
+            <nav>
                 <a href="#">Privacy Policy</a>
                 <a href="SupportPage.html">Support</a>
                 <a href="AboutPage.html">About</a>
                 <a href="ContactPage.html">Contact</a>
-            </div>
-            <p>&copy; 2024 ALERTNET INC. All Rights Reserved.</p>
-        </footer>
-    </div>
+            </nav>
+        </div>
+        <p>© 2024 ALERTNET INC, All Rights Reserved</p>
+    </footer>
 </body>
 </html>

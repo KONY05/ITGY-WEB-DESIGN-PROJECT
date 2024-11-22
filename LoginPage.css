@@ -48,7 +48,7 @@ body {
 h2{
     margin-bottom: 20px;
     font-size: 1.2em;
-    font-weight: lighter;
+    font-weight: 400;
     color: black;
 }
 
@@ -153,4 +153,5 @@ input{
 
 .bottom a{
     text-wrap: nowrap;
+    font-weight: bold;
 }
