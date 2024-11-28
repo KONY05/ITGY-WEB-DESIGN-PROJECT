@@ -21,8 +21,20 @@ a:visited{
 }
 
 /* Header Styling */
-header{
-    background: linear-gradient(var(--header_color), var(--box-shadow));
+header {
+    background: repeating-linear-gradient(to top right, var(--header_color), var(--box-shadow), var(--white));
+    background-clip: border-box;
+    background-size: 200% 200%; /* Ensure the gradient is larger than the element */
+    animation: animatedTextGradient 5s infinite alternate-reverse;
+}
+
+@keyframes animatedTextGradient {
+    from {
+        background-position: top right;
+    }
+    to {
+        background-position: bottom left;
+    }
 }
 
 .nav{
@@ -48,6 +60,7 @@ header{
     border: none;
     outline: none;
     font-size: 16px;
+    text-transform: uppercase;
 }
 
 button a{

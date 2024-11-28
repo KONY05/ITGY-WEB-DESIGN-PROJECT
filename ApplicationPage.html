@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlertNet - Application Page</title>
+    <title>Application Page</title>
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="ApplicationPage.css">
+    <script defer src="scripts/Application.js"></script>
 </head>
 <body>
     <header class="header">
-        <img src="img/logo.png" alt="AlertNet Logo" id="logoImg">
+        <a href="HomePage.html" target="_blank"><img src="img/logo.png" alt="AlertNet Logo" id="logoImg"></a>
         <nav class="nav">
             <a href="HomePage.html" target="_blank">Home</a>
             <a href="AboutPage.html" target="_blank">About</a>
             <a href="SafetyTipsPage.html" target="_blank">Safety Tips</a>
+            <a href="IncidentsPage.html" target="_blank">Incidents</a>
             <a href="SupportPage.html" target="_blank">Support</a>
         </nav>
         <div class="header_btns">
@@ -24,52 +26,65 @@
 
     <!-- Main Application -->
     <main>
-        <section class="container">
-            <h1>report suspicious activity</h1>
-
-            <div class="reportInfo">
-                <form class="reportForm">
-                    <label for="description">Describe the incident</label><br>
-                    <textarea name="incidentDesc" id="description" placeholder="Provide a description..." cols="60" rows="5"></textarea><br>
-
-                    <label for="uploadedMedia">Upload Media(Photo, Videos, Audio):</label><br>
-                    <input type="file" id="uploadedMedia"><br>
-
-                    <label for="inicidentClass">Incident Classification</label><br>
-                    <select>
-                        <option value="terrorism">Terrorism</option>
-                        <option value="kidnapping">Kidnapping</option>
-                        <option value="robbery">Robbery</option>
-                        <option value="assault">Assault</option>
-                        <option value="suspicious_activity">Suspicious Activity</option>
-                    </select><br>
-                    <label for="activity_type" class="sus_activity hidden">Type of suspicious activity:</label>
-                    <input type="text" name="activity_type" id="activity_type" class="sus_activity hidden">
-                    
-                    <label for="urgencyLvl">Urgency Level</label><br>
-                    <select>
-                        <option value="critical">Critical</option>
-                        <option value="moderate">Moderate</option>
-                        <option value="high">High</option>
-                    </select><br>
-
-                    <label for="location">Location</label><br>
-                    <input type="text" placeholder="Enter your location here..."><br>
-
-                    <label for="time">Is this event happening right now?</label><br>
-                    <select>
-                        <option value="realTime">Real-Time</option>
-                        <option value="not_real_time">Not Real-Time</option>
-                    </select><br>
-
-                    <button type="submit" id="submit">Submit Report</button>
-                </form>
-            </div>
-
-            <section class="collection">
-                <h2>incident reports</h2>
-                <div class="report"></div>
-            </section>
+        <section class="mainContainer">
+            <section class="container">
+                <h1>report suspicious activity</h1>
+    
+                <div class="reportInfo">
+                    <form class="reportForm">
+                        <label for="description">Describe the incident</label><br>
+                        <textarea name="incidentDesc" id="description" placeholder="Provide a description..." cols="60" rows="5"></textarea><br>
+    
+                        <label for="uploadedMedia">Upload Media(Photo, Videos, Audio):</label><br>
+                        <input type="file" id="uploadedMedia" class="media" accept="image/*, video/*, audio/*" multiple><br>
+    
+                        <label for="inicidentClass">Incident Classification</label><br>
+                        <select class="classify">
+                            <option value="terrorism">Terrorism</option>
+                            <option value="kidnapping">Kidnapping</option>
+                            <option value="robbery">Robbery</option>
+                            <option value="assault">Assault</option>
+                            <option value="suspicious_activity">Suspicious Activity</option>
+                        </select><br>
+                        <label for="activity_type" class="sus_activity hidden">Describe suspicious activity:</label>
+                        <input type="text" name="activity_type" id="activity_type" class="sus_activity hidden">
+                        
+                        <label for="urgencyLvl">Urgency Level</label><br>
+                        <select class="urgency">
+                            <option value="critical">Critical</option> <!--Add colors to each option-->
+                            <option value="moderate">Moderate</option>
+                            <option value="high">High</option>
+                        </select><br>
+    
+                        <label for="location">Location</label><br>
+                        <input type="text" id="location" placeholder="Enter your location here..." value="📍"><br>
+    
+                        <label for="time">Is this event happening right now?</label><br>
+                        <select class="time">
+                            <option value="realTime">Real-Time</option>
+                            <option value="not_real_time">Not Real-Time</option>
+                        </select><br>
+    
+                        <button type="submit" id="submit">Submit Report</button>
+                    </form>
+                </div>
+                </section>
+    
+                <section class="collection">
+                    <h2>incident reports</h2>
+                    <div class="reports">
+                        <!-- <div class="report">
+                            <img src="example.png" alt="inc_image">
+                            <div class="report_info">
+                                <p><strong>Description:</strong> <span class="rep_desc">xyz</span></p>
+                                <p><strong>Classification:</strong> <span class="rep_class">xyz</span></p>
+                                <p><strong>Urgency Level:</strong> <span  class="rep_urg">xyz</span></p>
+                                <p><strong>Location:</strong> <span class="rep_loc">xyz</span></p>
+                                <p><strong>Time:</strong> <span class="rep_time">xyz</span></p>
+                            </div>
+                        </div> -->
+                    </div>
+                </section>
         </section>
     </main>
     <footer class="footer">

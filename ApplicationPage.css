@@ -33,6 +33,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-transform: uppercase;
 }
 
 #logoImg{
@@ -54,6 +55,7 @@ header nav a {
     border: none;
     outline: none;
     font-size: 16px;
+    text-transform: uppercase;
 }
 
 button a, header nav a{
@@ -91,10 +93,18 @@ main{
     padding: 30px 0;
 }
 
-.container{
+.mainContainer{
     background-color: var(--white);
-    box-shadow: 5px 5px 3px;
-    padding: 7px 25px 35px;
+    display: flex;
+    width: 80%;
+    box-shadow: 5px 5px 15px;
+}
+
+.container{
+    padding: 10px 25px 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1{
@@ -109,7 +119,6 @@ textarea{
 textarea, input, select{
     margin-top: 7px;
     margin-bottom: 15px;
-    /* box-shadow: 2px 2px 3px var(--box-shadow); */
     outline: none;
 }
 
@@ -126,7 +135,7 @@ select, input{
     display: block;
 }
 
-#button{
+#submit{
     width: 395px;
     margin-top: 15px;
     padding: 10px 15px;
@@ -143,12 +152,11 @@ select, input{
 /* Collection Section */
 .collection{
     border: 1px solid black;
-    margin-top: 40px;
-    width: 390px;
+    margin: 40px 0;
+    width: 50%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     margin-inline: auto;
-
 }
 
 h2{
@@ -158,9 +166,54 @@ h2{
     text-align: center;
 }
 
-.report{
-    height: 300px;
+.reports{
+    height: 530px;
     overflow: auto;
+    padding: 5px 8px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.report{
+    display: flex;
+    column-gap: 10px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px var(--body-background);
+}
+
+.report_info{
+    line-height: 20px;
+}
+
+.rep_desc, .rep_loc {
+    width: 550px;
+    display: -webkit-box; /* Required for -webkit-line-clamp */
+    -webkit-box-orient: vertical; /* Required for -webkit-line-clamp */
+    overflow: hidden; /* Hide overflowing text */
+    -webkit-line-clamp: 2; /* Number of lines to show */
+    line-height: 1.5; /* Adjust line spacing */
+
+    /* Add the non-prefixed version for compatibility (even though it's rarely supported yet) */
+    line-clamp: 2;
+    box-orient: vertical; /* Non-standard, might help with compatibility in some cases */
+}
+
+/* Category Coloring */
+.critical{
+    color: red; 
+}
+
+.high{
+    color: orange;
+}
+
+.moderate{
+    color: rgb(214, 214, 90);
+}
+
+.blackCl{
+    color: #000000;
 }
 
 /* Footer Section */

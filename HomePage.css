@@ -33,6 +33,7 @@ a:visited{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-transform: uppercase;
 }
 
 #logoImg{
@@ -54,6 +55,7 @@ header nav a {
     border: none;
     outline: none;
     font-size: 16px;
+    text-transform: uppercase;
 }
 
 button a, header nav a, footer nav a{
@@ -214,6 +216,12 @@ footer nav{
 
 footer nav a{
     color: var(--black);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer nav a:hover{
+    color: var(--header-color);
 }
 
 .footer_div{
