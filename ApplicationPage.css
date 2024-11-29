@@ -85,6 +85,10 @@ button a, header nav a{
     color: var(--footerBg);
 }
 
+.userSec img{
+    width: 50px;
+}
+
 /* Main Section */
 main{
     display: flex;

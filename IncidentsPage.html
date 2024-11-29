@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Incident Near You</title>
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="HomePage.css">
+    <link rel="stylesheet" href="IncidentsPage.css">
+    <script defer src="scripts/Incident.js"></script>
 </head>
 <body>
     <!-- Header Section -->
     <header class="header">
         <a href="HomePage.html" target="_blank"><img src="img/logo.png" alt="AlertNet Logo" id="logoImg"></a>
         <nav class="nav">
-            <a href="HomePage.html" target="_blank">Home</a>
-            <a href="AboutPage.html" target="_blank">About</a>
-            <a href="SafetyTipsPage.html" target="_blank">Safety Tips</a>
+            <a href="HomePage.html" target="_self">Home</a>
+            <a href="AboutPage.html" target="_self">About</a>
+            <a href="SafetyTipsPage.html" target="_self">Safety Tips</a>
             <a href="IncidentsPage.html" id="active">Incidents</a>
-            <a href="SupportPage.html" target="_blank">Support</a>
+            <a href="SupportPage.html" target="_self">Support</a>
         </nav>
         <div class="header_btns">
             <button id="login"><a href="LoginPage.html">Log In</a></button>
@@ -27,15 +28,103 @@
     <!-- Main Container -->
      <main>
         <h1>incidents happening near you</h1>
-        <p>Your Location: <span id="loc_area"></span></p>
+        <p id="para">your location: <span id="loc_area"></span></p>
 
-        <!--Add Css-->
         <section class="incidentContainer">
             <div class="incident">
                 <p class="inc_head">kidnapping</p>
                 <p class="inc_loc">Near Market Street, Lagos</p>
-                <p class="inc_time">reported 5 minutes ago</p>
-                <p>urgency: <span class="inc_urg">High</span></p>
+                <p class="inc_time">Reported 5 minutes ago</p>
+                <p class="inc_urg">urgency: <span>High</span></p>
+
+                <div class="bottom_btns">
+                    <button class="verify">verify</button>
+                    <button class="add_info">add information</button>
+                    <!-- <p class="added_info ">✓ information added</p> -->
+                </div>
+            </div>
+            <div class="incident">
+                <p class="inc_head">kidnapping</p>
+                <p class="inc_loc">Near Market Street, Lagos</p>
+                <p class="inc_time">Reported 5 minutes ago</p>
+                <p class="inc_urg">urgency: <span>High</span></p>
+
+                <div class="bottom_btns">
+                    <button class="verify">verify</button>
+                    <button class="add_info">add information</button>
+                </div>
+            </div>
+            <div class="incident">
+                <p class="inc_head">kidnapping</p>
+                <p class="inc_loc">Near Market Street, Lagos</p>
+                <p class="inc_time">Reported 5 minutes ago</p>
+                <p class="inc_urg">urgency: <span>High</span></p>
+
+                <div class="bottom_btns">
+                    <button class="verify">verify</button>
+                    <button class="add_info">add information</button>
+                </div>
+            </div>
+            <div class="incident">
+                <p class="inc_head">kidnapping</p>
+                <p class="inc_loc">Near Market Street, Lagos</p>
+                <p class="inc_time">Reported 5 minutes ago</p>
+                <p class="inc_urg">urgency: <span>High</span></p>
+
+                <div class="bottom_btns">
+                    <button class="verify">verify</button>
+                    <button class="add_info">add information</button>
+                </div>
+            </div>
+            <div class="incident">
+                <p class="inc_head">kidnapping</p>
+                <p class="inc_loc">Near Market Street, Lagos</p>
+                <p class="inc_time">Reported 5 minutes ago</p>
+                <p class="inc_urg">urgency: <span>High</span></p>
+
+                <div class="bottom_btns">
+                    <button class="verify">verify</button>
+                    <button class="add_info">add information</button>
+                </div>
+            </div>
+            <div class="incident">
+                <p class="inc_head">kidnapping</p>
+                <p class="inc_loc">Near Market Street, Lagos</p>
+                <p class="inc_time">Reported 5 minutes ago</p>
+                <p class="inc_urg">urgency: <span>High</span></p>
+
+                <div class="bottom_btns">
+                    <button class="verify">verify</button>
+                    <button class="add_info">add information</button>
+                </div>
+            </div>
+            <div class="incident">
+                <p class="inc_head">kidnapping</p>
+                <p class="inc_loc">Near Market Street, Lagos</p>
+                <p class="inc_time">Reported 5 minutes ago</p>
+                <p class="inc_urg">urgency: <span>High</span></p>
+
+                <div class="bottom_btns">
+                    <button class="verify">verify</button>
+                    <button class="add_info">add information</button>
+                </div>
+            </div>
+            <div class="incident">
+                <p class="inc_head">kidnapping</p>
+                <p class="inc_loc">Near Market Street, Lagos</p>
+                <p class="inc_time">Reported 5 minutes ago</p>
+                <p class="inc_urg">urgency: <span>High</span></p>
+
+                <div class="bottom_btns">
+                    <button class="verify">verify</button>
+                    <button class="add_info">add information</button>
+                </div>
+            </div>
+            <div class="incident">
+                <p class="inc_head">kidnapping</p>
+                <p class="inc_loc">Near Market Street, Lagos</p>
+                <p class="inc_time">Reported 5 minutes ago</p>
+                <p class="inc_urg">urgency: <span>High</span></p>
 
                 <div class="bottom_btns">
                     <button class="verify">verify</button>
@@ -45,9 +134,19 @@
         </section>
      </main>
 
+     <!-- Modal section -->
+    <div class="addInfo_modalView hidden">
+        <div class="modal_top">
+            <h3>add information</h3>
+            <button class="cancelBtn">&times;</button>
+        </div>
+        <textarea name="additional_info" id="addInfo_modal" placeholder="Provide additional information here..." cols="60" rows="5"></textarea>
+        <button class="closeBtn">close</button>
+    </div>
+
      <!--Footer Section-->
      <footer>
-        <img src="img/logo.png" alt="ALERTNET logo">
+        <img src="img/logo.png" alt="ALERTNET logo"> 
         <div class="footer_div">
             <nav>
                 <a href="#">Privacy Policy</a>
@@ -58,5 +157,6 @@
         </div>
         <p>© 2024 ALERTNET INC, All Rights Reserved</p>
     </footer>
+    <div class="overlay hidden"></div>
 </body>
 </html>

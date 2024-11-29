@@ -24,6 +24,20 @@
         </div>
     </header>
 
+    <header class="header hidden">
+        <a href="HomePage.html" target="_blank"><img src="img/logo.png" alt="AlertNet Logo" id="logoImg"></a>
+        <nav class="nav">
+            <a href="HomePage.html" target="_blank">Home</a>
+            <a href="AboutPage.html" target="_blank">About</a>
+            <a href="SafetyTipsPage.html" target="_blank">Safety Tips</a>
+            <a href="IncidentsPage.html" target="_blank">Incidents</a>
+            <a href="SupportPage.html" target="_blank">Support</a>
+        </nav>
+        <div class="userSec">
+            <img src="img/dummy profileImg.png" alt="">
+        </div>
+    </header>
+
     <!-- Main Application -->
     <main>
         <section class="mainContainer">
@@ -46,8 +60,7 @@
                             <option value="assault">Assault</option>
                             <option value="suspicious_activity">Suspicious Activity</option>
                         </select><br>
-                        <label for="activity_type" class="sus_activity hidden">Describe suspicious activity:</label>
-                        <input type="text" name="activity_type" id="activity_type" class="sus_activity hidden">
+                        <input type="text" name="activity_type" id="activity_type" class="sus_activity hidden" placeholder="Enter Suspicious Activity">
                         
                         <label for="urgencyLvl">Urgency Level</label><br>
                         <select class="urgency">

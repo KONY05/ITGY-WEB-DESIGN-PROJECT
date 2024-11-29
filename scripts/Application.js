@@ -20,19 +20,21 @@ const reportUrgency = document.querySelector('.rep_urg');
 const reportLocation = document.querySelector('.rep_loc');
 const reportTime = document.querySelector('.rep_time');
 
-class SubmitReport{
+class ApplicatonPage{
     constructor(){
-        // this._getLocation();
+        this._getLocation();
         submitBtn.addEventListener('click', this._confirmReport.bind(this));
-        this._formatDate();
         // media.addEventListener('change', this._getMedia.bind(this));
+        classification.addEventListener('change', this._showSusActivity.bind(this));
     };
 
     _confirmReport(e) {
         e.preventDefault();
     
         // Validate fields
-        if (!description.value.trim() || !classification.value.trim() || !urgency.value.trim() || !time.value.trim()) {
+        const confirmSusActivityOpen = () => !sus_activity.classList.contains('hidden') && !sus_activity.value.trim() ? true: false;
+
+        if (!description.value.trim() || confirmSusActivityOpen()) {
             alert('Please complete all fields before submitting');
             return;
         }
@@ -46,7 +48,11 @@ class SubmitReport{
     _clearForm(){
         description.value = '';
         media.value = '';
-        userLocation.value = '';
+        // userLocation.value = '📍';
+        sus_activity.value = '';
+        classification.value = 'terrorism';
+
+        sus_activity.classList.add('hidden')
     }
 
     async _getLocation() {
@@ -82,7 +88,8 @@ class SubmitReport{
                 const address = data.features[0].properties.formatted;
                 // console.log("User's location:", address);
                 // alert(`You are at: ${address}`);
-                userLocation.value = `${address}`;
+                userLocation.value = '';
+                userLocation.value = `📍 ${address}`;
             } else {
                 throw new Error("No address found in the geocoding API response.");
             }
@@ -100,7 +107,7 @@ class SubmitReport{
         const html = `<div class="report">
                             <div class="report_info">
                                 <p class="rep_desc"><strong>Description:</strong> <span>${capitalizeFirstLetter(description.value)}</span></p>
-                                <p><strong>Classification:</strong> <span class="rep_class">${capitalizeFirstLetter(classification.value)}</span></p>
+                                <p><strong>Classification:</strong> <span class="rep_class">${sus_activity.classList.contains('hidden') ? capitalizeFirstLetter(classification.value): capitalizeFirstLetter(sus_activity.value)}</span></p>
                                 <p><strong>Urgency Level:</strong> <span class="rep_urg ${urgency.value == 'critical' ? 'critical': urgency.value == 'high' ? 'high': urgency.value == 'moderate' ? 'moderate': 'blackCl'}">${capitalizeFirstLetter(urgency.value)}</span></p>
                                 <p class="rep_loc"><strong>Location:</strong> <span>${capitalizeFirstLetter(userLocation.value)}</span></p>
                                 <p><strong>Time:</strong> <span class="rep_time">${capitalizeFirstLetter(time.value)} - ${this._formatDate()}</span></p>
@@ -113,11 +120,7 @@ class SubmitReport{
 
     _formatDate(){
         const date = new Date();
-        // console.log(date);
-        // console.log(new Intl.DateTimeFormat(navigator.language).format(date));
         
-        
-        // const locale
         const calcDaysPassed = (date1, date2) =>
             Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
         
@@ -131,44 +134,54 @@ class SubmitReport{
           return new Intl.DateTimeFormat(locale).format(date);
     }
 
-    _getMedia(ev){
-        // fix error occurring here
-            const files = ev.target.files; // Get selected files
-        
-            // Loop through each selected file and display it
-            for (const file of files) {
-                const fileReader = new FileReader();
-        
-                fileReader.onload = function (e) {
-                    const fileType = file.type;
-        
-                    if (fileType.startsWith('image/')) {
-                        // Display image
-                        const img = document.createElement('img');
-                        img.src = e.target.result;
-                        img.style.width = '50px'; // Resize the image
-                        return img;
-                    } else if (fileType.startsWith('video/')) {
-                        // Display video
-                        const video = document.createElement('video');
-                        video.src = e.target.result;
-                        video.controls = true;
-                        video.style.width = '200px'; // Resize the video
-                        // filePreview.appendChild(video);
-                    } else if (fileType.startsWith('audio/')) {
-                        // Display audio
-                        const audio = document.createElement('audio');
-                        audio.src = e.target.result;
-                        audio.controls = true;
-                        // filePreview.appendChild(audio);
-                    }
-                };
-        
-                // Read the file as a data URL
-                fileReader.readAsDataURL(file);
-            }
-    };
-    
+    _showSusActivity(e){
+        if(e.target.value === "suspicious_activity"){
+            sus_activity.classList.remove('hidden')
+        }else{
+            sus_activity.classList.add('hidden')
+        }
+    }
+
 }
 
-const confirm = new SubmitReport();
+const app = new ApplicatonPage();
+
+
+
+//  _getMedia(ev){
+//         // fix error occurring here
+//         const files = ev.target.files; // Get selected files
+        
+//         // Loop through each selected file and display it
+//         for (const file of files) {
+//             const fileReader = new FileReader();
+    
+//             fileReader.onload = function (e) {
+//                 const fileType = file.type;
+    
+//                 if (fileType.startsWith('image/')) {
+//                     // Display image
+//                     const img = document.createElement('img');
+//                     img.src = e.target.result;
+//                     img.style.width = '50px'; // Resize the image
+//                     return img;
+//                 } else if (fileType.startsWith('video/')) {
+//                     // Display video
+//                     const video = document.createElement('video');
+//                     video.src = e.target.result;
+//                     video.controls = true;
+//                     video.style.width = '200px'; // Resize the video
+//                     // filePreview.appendChild(video);
+//                 } else if (fileType.startsWith('audio/')) {
+//                     // Display audio
+//                     const audio = document.createElement('audio');
+//                     audio.src = e.target.result;
+//                     audio.controls = true;
+//                     // filePreview.appendChild(audio);
+//                 }
+//             };
+    
+//             // Read the file as a data URL
+//             fileReader.readAsDataURL(file);
+//         }
+// };

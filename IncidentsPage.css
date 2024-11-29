@@ -3,10 +3,14 @@
 :root{
     --header-color: #6879C1;
     --signUp_bg: #0A2187;
-    --button-text: #FD4A4A;
+    --inc_header: #D83535;
     --black: #000000;
     --white: #ffffff;
     --section-background: #B9B9B9;
+    --verify_btn: #19B63B;
+    --addInfo_btn: #072BE0;
+    --box-shadow: #797878;
+    --overlay: #161616ba;
 }
 
 *{
@@ -14,6 +18,18 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+}
+
+body{
+    z-index: 50;
+}
+
+.body_overlay{
+    overflow: hidden !important;
+}
+
+.hidden{
+    display: none !important;
 }
 
 #active{
@@ -78,6 +94,169 @@ button a, header nav a, footer nav a{
     margin: 0 10px;
 }
 
+/* Main Styling */
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.incidentContainer{
+    margin-top: 25px;
+    padding: 5px 20px;
+    background-color: var(--section-background);
+    width: 50%;
+    border: 1px solid var(--black);
+    border-top: 10px solid var(--section-background);
+    border-bottom: 10px solid var(--section-background);
+    line-height: 25px;
+    box-shadow: 5px 5px 2px var(--box-shadow);
+    height: 530px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+h1, #para, .inc_urg, .verify, .add_info, h3, .closeBtn{
+    text-transform: capitalize;
+}
+
+#para{
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.incident{
+    background-color: var(--white);
+    border: 1px solid var(--black);
+    border-radius: 10px;
+    box-shadow: 5px 5px 2px var(--box-shadow);
+    padding: 10px;
+}
+
+.inc_head{
+    color: var(--inc_header);
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.inc_urg{
+    color: var(--inc_header);
+    font-weight: 500;
+}
+
+.bottom_btns{
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.added_info{
+    color: var(--verify_btn);
+    font-size:smaller;
+    text-transform: capitalize;
+}
+
+.verify, .add_info{
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    color: var(--white);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.verify, .closeBtn{
+    background-color: var(--verify_btn);
+}
+
+.add_info{
+    background-color: var(--addInfo_btn);
+}
+
+/* Modal Section */
+.overlay{
+    background-color: var(--overlay);
+    z-index: 0;
+    position: relative;
+    height: 130vh;
+    overflow: none !important;
+    top: -160vh;
+}
+
+.addInfo_modalView{
+    background-color: var(--white);
+    top: 50%;
+    left: 32%;
+    transform: translate(0%, -50%);
+    position: fixed;
+    z-index: 10;
+    /* width: 450px; */
+    padding: 30px;
+    /* border-radius: 10px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal_top{
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* flex-direction: column; */
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+h3{
+    /* margin: 0 auto; */
+    margin-left: 35%;
+    text-align: center;
+    /* text-wrap: nowrap; */
+}
+
+.cancelBtn{
+    margin-left: auto;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 30px;
+    color: var(--section-background);
+    cursor: pointer;
+}
+
+.cancelBtn:hover{
+    color: var(--black);
+}
+
+textarea{
+    padding: 5px;
+    box-shadow: 5px 5px 5px var(--box-shadow);
+    margin-bottom: 20px;
+}
+
+textarea:placeholder-shown{
+    font-weight: lighter;
+}
+
+.closeBtn{
+    width: fit-content;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    color: var(--white);
+    font-weight: bold;
+    cursor: pointer;
+}
+
 /* Footer Styling */
 footer{
     display: flex;
@@ -88,6 +267,7 @@ footer{
 footer img{
     width: 8%;
     margin-bottom: 30px;
+    /* border: 1px solid brown; */
 }
 
 footer nav{
@@ -107,7 +287,7 @@ footer nav a:hover{
 }
 
 .footer_div{
-    border-bottom: 2px solid var(--body-background);
+    border-bottom: 2px solid var(--section-background);
     width: 50%;
     display: flex;
     flex-direction: column;
