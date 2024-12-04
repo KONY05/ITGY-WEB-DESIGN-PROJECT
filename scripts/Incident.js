@@ -19,7 +19,7 @@ class IncidentPage{
     activeTextElements = new Map(); // Map to track active text elements
 
     constructor(){
-        // this._getLocation();
+        this._getLocation();
         addInfo_btns.forEach(button => 
             button.addEventListener('click', this._openPopUp.bind(this)));
 

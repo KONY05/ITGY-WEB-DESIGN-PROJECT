@@ -8,6 +8,7 @@
     --white: #ffffff;
     --box-shadow: #f9f9f9;
     --body-background: #B9B9B9;
+    --green: #19B63B;
 }
 
 *{
@@ -208,8 +209,8 @@ h2{
     color: red; 
 }
 
-.high{
-    color: orange;
+.low{
+    color: var(--green);
 }
 
 .moderate{

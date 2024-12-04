@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Page</title>
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="SupportPage.css">
+</head>
+    
+<body>
+      <header class="header">
+        <img src="img/logo.png" alt="AlertNet Logo" id="logoImg">
+        <nav class="nav">
+            <a href="HomePage.html" target="_self">Home</a>
+            <a href="AboutPage.html" target="_self">About</a>
+            <a href="SafetyTipsPage.html" target="_self">Safety Tips</a>
+            <a href="IncidentsPage.html" target="_self">Incidents</a>
+        </nav>
+        <div class="header_btns">
+            <button id="login"><a href="LoginPage.html">Log In</a></button>
+            <button class="signup"><a href="SignupPage.html">Sign Up</a></button>
+        </div>
+    </header>
+       
+<!-- Main Section -->
+<main class="main-content">
+  <!--Support Center-->
+    <section class="support-center">
+      <h1>Support Center</h1>
+      <p>Need help? Find answers to common questions or ask us directly</p>
+    </section>
+
+    <!-- Knowledge Base -->
+    <section class="knowledge-base">
+      <h2>Knowledge Base</h2>
+      <p>Browse frequently asked questions and helpful articles</p>
+      <div class="faq">
+        <div class="faq-item">
+          <h3>How do I report an incident</h3>
+          <p>You can report an incident by clicking on the "report now" button on the homepage then providing details like location, description, and multimedia.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I edit or update a report after submission</h3>
+          <p>No, but you can add additional information to the existing report from the incident details page.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How does the system verify incidents</h3>
+          <p>We use crowdsourced verifications from users in the area and automated AI analysis to validate the credibility of reports.</p>
+        </div>
+      </div>
+<br>
+      <!--Contact Section-->
+        <h2>Contact Section</h2>
+        <p>If you couldn't find an answer, contact our support team using the form below:</p>
+
+        <form>
+            <!--Your name-->
+            <label for="name">Your name</label>
+            <input type="text" id="name" class="name" placeholder="Enter your Name"><br>
+            <!--Email-->
+            <label for="email">Email</label>
+            <input type="email" id="email" class="email" placeholder="Enter your email address"><br>
+            <!--Describe your issue-->
+            <label for="issue">Describe your issue</label>
+            <input type="message" id="issue" class="issue" rows="5" col="10" placeholder="Provide a description..."><br>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+        </form>
+    </section>
+    </main>
+
+    <!--Footer Section-->
+    <footer>
+      <img src="img/logo.png" alt="ALERTNET logo">
+      <div class="footer_div">
+          <nav>
+              <a href="PrivacyPolicy.html">Privacy Policy</a>
+              <a href="SupportPage.html" id="footer_active">Support</a>
+              <a href="AboutPage.html">About</a>
+              <a href="ContactPage.html">Contact</a>
+          </nav>
+      </div>
+      <p>© 2024 ALERTNET INC, All Rights Reserved</p>
+  </footer>
+    </body>
+</html>

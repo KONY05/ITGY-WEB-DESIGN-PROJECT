@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --header-color: #6879C1;
+    --signUp_bg: #0A2187;
+    --button-text: #FD4A4A;
+    --black: #000000;
+    --white: #ffffff;
+    --section-background: #B9B9B9;
+    --heroBg: #040D33;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+#active{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: var(--signUp_bg);
+}
+
+a:visited{
+    color: inherit;
+}
+  
+body {
+    line-height: 1.6;
+}
+  
+ /* Header Styling */
+.header {
+  background-color: var(--header-color);
+  color: var(--white);
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+#logoImg{
+  width: 50px;
+}
+
+header nav a {
+  color: var(--white);
+  margin: 0 10px;
+}
+
+.header nav a:hover{
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: var(--signUp_bg);
+}
+
+.signup, #login{
+  border: none;
+  outline: none;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+button a, header nav a, footer nav a{
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup {
+  padding: 8px 15px;
+  border-radius: 10px;
+  background-color: var(--signUp_bg);
+  color: var(--white);
+}
+
+#login{
+  color: var(--black);
+  background-color: transparent;
+  margin: 0 10px;
+}
+  
+  /* Main Content */
+  .main-content {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .support-center h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color:#000;
+  }
+  
+  .support-center p {
+    color: black
+  }
+  
+  /* Knowledge Base Section */
+  .knowledge-base {
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    background-color: #fff;
+    max-width: 800px;
+  }
+  
+  .knowledge-base h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    border-bottom: 2px solid #000000;
+    margin-bottom: 10px;
+    color:#000;
+  }
+  
+  .knowledge-base p {
+    color: black;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  
+  .faq {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+  }
+  
+  .faq-item {
+    background-color: rgb(202, 198, 198);
+    padding: 1rem;
+    border: 2px solid black;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    color:#000;
+    
+  }
+  
+  .faq-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .faq-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+  
+  .faq-item p {
+    font-size: 0.95rem;
+    color: black;
+    text-align: left;
+  }
+  
+  /* Contact Support Section */
+  .contact-support {
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    max-width: 800px;
+  }
+  
+  .contact-support h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    
+  }
+  
+  .contact-support p {
+    margin-bottom: 1rem;
+    color: black;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  form label {
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: left;
+  }
+  
+  form input,
+  form textarea,
+  form button {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    
+  }
+  
+  form input:focus,
+  form textarea:focus {
+    outline: black;
+    border-color: #4a4aa6;
+  }
+  
+  form button {
+    background-color: rgb(230, 69, 69);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #333;
+  }
+
+  /* Footer Section */
+footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer img{
+  width: 12%;
+  margin-bottom: 30px;
+}
+
+footer nav{
+  display: flex;
+  column-gap: 30px;
+  margin-bottom: 25px;
+}
+
+footer nav a{
+  color: var(--black);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer nav a:hover{
+  color: var(--header-color);
+}
+
+.footer_div{
+  border-bottom: 2px solid var(--section-background);
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer p{
+  margin: 25px 0;
+}
+
+#footer_active{
+  background-color: var(--header-color);
+  color: var(--black);
+  padding: 5px 10px;
+  border-radius: 5px;
+}

@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --header-color: #6879C1;
+    --signUp_bg: #0A2187;
+    --button-text: #FD4A4A;
+    --black: #000000;
+    --white: #ffffff;
+    --section-background: #B9B9B9;
+    --heroBg: #040D33;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+a:visited{
+    color: inherit;
+}
+
+/* Header Styling */
+.header {
+    background-color: var(--header-color);
+    color: var(--white);
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+}
+
+.logoDiv a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logoDiv a p{
+    color: var(--black);
+    font-weight: 600;
+}
+
+#logoImg{
+    width: 50px;
+}
+
+.userSec{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.userSec p{
+    color: var(--black);
+    font-weight: 600;
+}
+
+.userSec img{
+    width: 50px;
+}
+
+/* Main Sectin Styling */
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 38px 0;
+}
+
+h1, #main_p{
+    margin-bottom: 15px;
+}
+
+#category{
+    margin-bottom: 25px;
+}
+
+/* Table Styling */
+.reports{
+    /* border-bottom: 1px solid var(--black); */
+    border-top: 1px solid var(--black);
+    width: 80%;
+    margin-top: 20px;
+    height: 250px;
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead{
+    background-color: var(--section-background);
+    position: sticky; /* Keep the header fixed */
+    top: 0; /* Stick to the top */ 
+    z-index: 1;
+}
+
+table th, table td {
+    border: 1px solid var(--black);
+    padding: 8px;
+    text-align: left;
+  }
+
+/* Footer Section */
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer img{
+    width: 5%;
+    margin-bottom: 30px;
+}
+
+footer nav{
+    display: flex;
+    column-gap: 30px;
+    margin-bottom: 25px;
+}
+
+footer nav a{
+    color: var(--black);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer nav a:hover{
+    color: var(--header-color);
+}
+
+.footer_div{
+    border-bottom: 2px solid var(--section-background);
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer p{
+    margin: 25px 0;
+}

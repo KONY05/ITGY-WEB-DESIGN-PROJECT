@@ -3,27 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy</title>
-    <link rel="stylesheet" href="privacypolicy.css">
+    <title>Our Privacy Policy</title>
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="PrivacyPolicy.css">
 </head>
 <body>
-    <header class="navbar">
-        <div style="color: black; display: flex; align-items: center;" class="logo">
-            <img src="/alERT.jpg" alt="Logo" style="width: 30px; height: 30px; margin-right: 10px;" />
-            ALERTNET
-        </div>
-        
-        <nav>
-            <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">SAFETY TIPS</a></li>
-                <li><a href="#">INCIDENTS</a></li>
-            </ul>
+    <header class="header">
+        <img src="img/logo.png" alt="AlertNet Logo" id="logoImg">
+        <nav class="nav">
+            <a href="HomePage.html" id="active">Home</a>
+            <a href="AboutPage.html" target="_self">About</a>
+            <a href="SafetyTipsPage.html" target="_self">Safety Tips</a>
+            <a href="IncidentsPage.html" target="_self">Incidents</a>
         </nav>
-        <div class="auth-buttons">
-            <a href="#" style="color: black;font-weight: bold; text-decoration: none;"  class="login-btn">Log In</a>
-            <a href="#" class="signup-btn">Sign Up</a>
+        <div class="header_btns">
+            <button id="login"><a href="LoginPage.html">Log In</a></button>
+            <button class="signup"><a href="SignupPage.html">Sign Up</a></button>
         </div>
     </header>
 
@@ -74,23 +69,16 @@
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div style="display: flex; justify-content: center; align-items: center; height: 120px;">
-                <img src="./alERT.jpg" alt="Shield Icon" style="width: 120px; height: auto;" />
-            </div>
-            
-
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Support</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
-            </div>
+        <img src="img/logo.png" alt="ALERTNET logo">
+        <div class="footer_div">
+            <nav>
+                <a href="PrivacyPolicy.html" id="footer_active">Privacy Policy</a>
+                <a href="SupportPage.html">Support</a>
+                <a href="AboutPage.html">About</a>
+                <a href="ContactPage.html">Contact</a>
+            </nav>
         </div>
-        <hr />
-        <div class="footer-copyright">
-            <p> @ 2024 ALERTNET INC, All Right Reserved</p>
-        </div>
+        <p>© 2024 ALERTNET INC, All Rights Reserved</p>
     </footer>
     
 </body>

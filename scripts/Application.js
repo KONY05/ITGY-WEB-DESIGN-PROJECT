@@ -51,6 +51,7 @@ class ApplicatonPage{
         // userLocation.value = '📍';
         sus_activity.value = '';
         classification.value = 'terrorism';
+        urgency.value = 'critical';
 
         sus_activity.classList.add('hidden')
     }
@@ -108,7 +109,7 @@ class ApplicatonPage{
                             <div class="report_info">
                                 <p class="rep_desc"><strong>Description:</strong> <span>${capitalizeFirstLetter(description.value)}</span></p>
                                 <p><strong>Classification:</strong> <span class="rep_class">${sus_activity.classList.contains('hidden') ? capitalizeFirstLetter(classification.value): capitalizeFirstLetter(sus_activity.value)}</span></p>
-                                <p><strong>Urgency Level:</strong> <span class="rep_urg ${urgency.value == 'critical' ? 'critical': urgency.value == 'high' ? 'high': urgency.value == 'moderate' ? 'moderate': 'blackCl'}">${capitalizeFirstLetter(urgency.value)}</span></p>
+                                <p><strong>Urgency Level:</strong> <span class="rep_urg ${urgency.value == 'critical' ? 'critical': urgency.value == 'low' ? 'low': urgency.value == 'moderate' ? 'moderate': 'blackCl'}">${capitalizeFirstLetter(urgency.value)}</span></p>
                                 <p class="rep_loc"><strong>Location:</strong> <span>${capitalizeFirstLetter(userLocation.value)}</span></p>
                                 <p><strong>Time:</strong> <span class="rep_time">${capitalizeFirstLetter(time.value)} - ${this._formatDate()}</span></p>
                             </div>
