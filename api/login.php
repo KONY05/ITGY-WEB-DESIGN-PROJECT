@@ -13,14 +13,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = $result->fetch_assoc();
 
     if ($user && password_verify($password, $user['password'])) {
+        // Store user session details
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['is_admin'] = $user['is_admin'];
 
+        // Redirect based on user role
         if ($user['is_admin']) {
             header("Location: AdminPage.html");
         } else {
             header("Location: UserDashboard.html");
         }
+        exit();
     } else {
         echo "Invalid username or password.";
     }

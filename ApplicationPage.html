@@ -43,7 +43,7 @@
                 <h1>report suspicious activity</h1>
     
                 <div class="reportInfo">
-                    <form class="reportForm">
+                    <form action="api/submit_incident.php" method="POST" enctype="multipart/form-data" class="reportForm">
                         <label for="description">Describe the incident</label><br>
                         <textarea name="incidentDesc" id="description" placeholder="Provide a description..." cols="60" rows="5"></textarea><br>
     

@@ -29,6 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($stmt->execute()) {
         echo "Incident reported successfully!";
+        header("Location: ApplicationPage.html");
+        exit();
     } else {
         echo "Error: " . $conn->error;
     }

@@ -11,6 +11,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($stmt->execute()) {
         echo "Signup successful!";
+        // Redirect to login page after successful signup
+        header("Location: LoginPage.html");
+        exit();
     } else {
         echo "Error: " . $conn->error;
     }
