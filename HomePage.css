@@ -17,10 +17,18 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.hidden{
+    display: none !important;
+}
+
 #active{
     padding: 5px 10px;
     border-radius: 5px;
     background-color: var(--signUp_bg);
+}
+
+a{
+    color: inherit;
 }
 
 a:visited{
@@ -43,7 +51,7 @@ a:visited{
 }
 
 header nav a {
-    color: var(--white);
+    color: var(--white) !important;
     margin: 0 10px;
 }
 
@@ -184,12 +192,13 @@ h1{
     border-radius: 5px;
     font-size: 16px;
     padding: 17px 31px;
+    background-color: var(--white);
 }
 
 /* Section Two Styling */
 .sec2{
     padding: 105px 150px;
-    background-color: var(--section-background);
+    /* background-color: var(--section-background); */
     border: 2px solid var(--black);
     line-height: 25px;
     display: flex;
@@ -197,6 +206,20 @@ h1{
     align-items: center;
     text-align: center;
     /* justify-content: center; */
+
+    background: repeating-linear-gradient(to top right, var(--signUp_bg), var(--section-background), var(--white));
+    background-clip: border-box;
+    background-size: 200% 200%; /* Ensure the gradient is larger than the element */
+    animation: animatedTextGradient 5s infinite alternate-reverse;
+}
+
+@keyframes animatedTextGradient {
+    from {
+        background-position: top right;
+    }
+    to {
+        background-position: bottom left;
+    }
 }
 
 .sec2 h3, #sec3_header{
@@ -251,4 +274,31 @@ footer nav a:hover{
 
 footer p{
     margin: 25px 0;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    body {
+        background-color: white;
+        color: red;
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        }
+
+    .mobile-message {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        margin: 0;
+        display: block !important;
+    }
+
+    .header, main, footer {
+        display: none; /* Hide header, main, and footer on mobile */
+    }
 }
