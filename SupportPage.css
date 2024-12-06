@@ -27,8 +27,12 @@
   display: none !important;
 }
 
+a{
+  color: inherit;
+}
+
 a:visited{
-    color: inherit;
+  color: inherit;
 }
   
 body {
@@ -265,7 +269,7 @@ footer p{
 
 #footer_active{
   background-color: var(--header-color);
-  color: var(--black);
+  color: var(--ba);
   padding: 5px 10px;
   border-radius: 5px;
 }

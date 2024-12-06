@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Community Safety Tips</title>
-    <link rel="stylesheet" href="TIPS PAGE.css">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="SafetyTipsPage.css">
 </head>
 
 <body>
+    <!-- Header Section -->
     <header class="header">
-        
-        <div class="logo"><img src="logo (1).png" alt="LOGO" width="30" height="20">ALERTNET</div>
+        <img src="img/logo.png" alt="AlertNet Logo" id="logoImg">
         <nav class="nav">
-            <a href="#">HOME</a>
-            <a href="#">ABOUT</a>
-            <a href="#">SAFETY TIPS</a>
-            <a href="#">INCIDENTS</a>
+            <a href="HomePage.html" target="_self">Home</a>
+            <a href="AboutPage.html" target="_self">About</a>
+            <a href="ApplicationPage.html" target="_self">Report Now</a>
+            <a href="SafetyTipsPage.html" id="active">Safety Tips</a>
+            <a href="IncidentsPage.html" target="_self">Incidents</a>
         </nav>
-        <div class="user-profile">
-            <a href="#" class="login"><strong>LOG IN</strong></a>
-            <a href="#" class="signup"><STrong>SIGN UP</STrong></a>
+        <div class="header_btns">
+            <button id="login"><a href="LoginPage.html">Log In</a></button>
+            <button class="signup"><a href="SignupPage.html">Sign Up</a></button>
         </div>
     </header>
-    <div class="second">
+
+    <!-- Main Section -->
+    <div class="title">
         <h1>Community Safety Tips</h1>
         <p>Stay informed and protect yourself with these safety tips</p>
     </div>
@@ -67,17 +70,24 @@
             </div>
         </section>
     </main>
-    <div class="image">
-        <img src="logo (1).png" alt="LOGO" width="100" height="100" style="justify-content: center;"> 
-    </div>
 
-    <footer class="footer">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Support</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-        <p>&copy; 2024 ALERTNET INC, All Rights Reserved</p>
+      <!--Footer Section-->
+      <footer>
+        <img src="img/logo.png" alt="ALERTNET logo">
+        <div class="footer_div">
+            <nav>
+                <a href="PrivacyPolicy.html">Privacy Policy</a>
+                <a href="SupportPage.html">Support</a>
+                <a href="AboutPage.html">About</a>
+                <a href="ContactPage.html">Contact</a>
+            </nav>
+        </div>
+        <p>© 2024 ALERTNET INC, All Rights Reserved</p>
     </footer>
+
+    <div class="mobile-message hidden">
+        Content for your screensize is not available for now <br> Please view on a laptop
+    </div>
 </body>
 
 </html>

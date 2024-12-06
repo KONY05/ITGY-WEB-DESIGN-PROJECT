@@ -19,6 +19,14 @@
     display: none !important;
 }
 
+a{
+    color: inherit;
+}
+
+a:visited{
+    color: inherit;
+}
+
 /* Background and centering */
 body {
     display: flex;

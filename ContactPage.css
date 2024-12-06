@@ -28,6 +28,10 @@
     background-color: var(--signUp_bg);
 } */
 
+a{
+    color: inherit;
+}
+
 a:visited{
     color: inherit;
 }

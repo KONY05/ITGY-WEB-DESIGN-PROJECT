@@ -6,8 +6,8 @@
     --button-text: #FD4A4A;
     --black: #000000;
     --white: #ffffff;
-    --section-background: #B9B9B9;
-    --heroBg: #040D33;
+    --section-background: #D9D9D9;
+    --box-shadow: #797878;
 }
 
 *{
@@ -17,17 +17,14 @@
     font-family: 'Roboto', sans-serif;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #ffffff;
-    color: #000000;
-    padding: 0;
-    margin: 0;
-}
-
 .hidden{
     display: none !important;
+}
+
+#active{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: var(--signUp_bg);
 }
 
 a{
@@ -89,45 +86,58 @@ button a, header nav a, footer nav a{
     margin: 0 10px;
 }
 
-/* Main Content */
-main {
-    padding: 20px;
-}
-
-.privacy-policy {
-    background: rgb(252, 251, 251);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    margin: 20px auto;
-}
-
-.privacy-policy h1 {
+/* Content Styling */
+.title{
+    margin-top: 20px;
     text-align: center;
-    margin-bottom: 20px;
-    color: #000000;
 }
 
-.content-section {
-    margin-bottom: 20px;
+.content {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: var(--section-background);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--black);
+    /* border-radius: 5px; */
+    padding: 20px 35px;
+    margin-bottom: 30px;
 }
 
-.content-section h2 {
-    font-size: 18px;
-    color: #000000;
+h1 {
+    /* font-size: 24px; */
     margin-bottom: 10px;
+    /* color: #333; */
 }
 
-.content-section ul {
-    margin-left: 20px;
+.tips {
+    /* margin-top: 20px; */
+    /* width: 80%; */
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
 }
 
-.content-section ul li {
-    list-style: disc;
-    margin-bottom: 5px;
+.tip {
+    background-color: white;
+    border: 1px solid var(--black);
+    box-shadow: 5px 5px 2px var(--box-shadow);
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: left;
+    text-decoration: solid;
 }
 
+.tip h2 {
+    font-size: 18px;
+    color: black;
+}
+
+.tip p {
+    font-size: 14px;
+    color: #555;
+}
 
 /* Footer Section */
 footer{
@@ -137,7 +147,7 @@ footer{
 }
 
 footer img{
-    width: 12%;
+    width: 8%;
     margin-bottom: 30px;
 }
 
@@ -169,13 +179,6 @@ footer p{
     margin: 25px 0;
 }
 
-#footer_active{
-    background-color: var(--header-color);
-    color: var(--black);
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
 /* Media query for mobile devices */
 @media (max-width: 768px) {
     body {
@@ -198,7 +201,7 @@ footer p{
         display: block !important;
     }
 
-    .header, main, footer{
+    .header, main, footer {
         display: none; /* Hide header, main, and footer on mobile */
     }
 }

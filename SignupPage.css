@@ -18,6 +18,14 @@
     display: none !important;
 }
 
+a{
+    color: inherit;
+}
+
+a:visited{
+    color: inherit;
+}
+
 body {
     display: flex;
     justify-content: center;
