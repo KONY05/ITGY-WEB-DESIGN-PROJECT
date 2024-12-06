@@ -10,7 +10,10 @@ while ($row = $result->fetch_assoc()) {
     $incidents[] = $row;
 }
 
+// Return incidents as JSON
+header('Content-Type: application/json');
 echo json_encode($incidents);
+
 
 $stmt->close();
 $conn->close();
