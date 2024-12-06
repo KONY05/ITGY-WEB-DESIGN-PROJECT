@@ -119,6 +119,7 @@ h1{
 
 textarea{
     padding: 5px;
+    width: 100%;
 }
 
 textarea, input, select{
@@ -141,7 +142,7 @@ select, input{
 }
 
 #submit{
-    width: 395px;
+    width: 90%;
     margin-top: 15px;
     padding: 10px 15px;
     border-radius: 10px;
@@ -152,6 +153,20 @@ select, input{
     border: none;
     outline: none;
     cursor: pointer;
+}
+
+.para{
+    /* text-wrap: wrap; */
+    margin-top: -15px;
+    font-size: small;
+}
+
+#counterUp{
+    color: rgb(200, 200, 48);
+}
+
+#counterDown{
+    color: rgb(16, 230, 16);
 }
 
 /* Collection Section */
@@ -239,4 +254,44 @@ footer nav a {
 
 footer nav a:hover{
     color: grey;
+}
+
+/* Media query */
+@media (max-width: 1024px){
+    .collection{
+        width: 40%;
+    }
+
+    .rep_loc, .rep_desc{
+        width: 60%;
+        overflow-wrap: break-word; /* Allow long words to break */
+        word-wrap: break-word; /* For older browsers */
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    body {
+        background-color: white;
+        color: red;
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        }
+
+    .mobile-message {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        margin: 0;
+        display: block !important;
+    }
+
+    .header, main, footer {
+        display: none; /* Hide header, main, and footer on mobile */
+    }
 }

@@ -45,7 +45,8 @@
                 <div class="reportInfo">
                     <form class="reportForm">
                         <label for="description">Describe the incident</label><br>
-                        <textarea name="incidentDesc" id="description" placeholder="Provide a description..." cols="60" rows="5"></textarea><br>
+                        <textarea name="incidentDesc" id="description" placeholder="Provide a description..." rows="5" maxlength="150"></textarea>
+                        <p class="para">You have used <span id="counterUp">0</span> out of <span id="counterDown">150</span> letters</p><br>
     
                         <label for="uploadedMedia">Upload Media(Photo, Videos, Audio):</label><br>
                         <input type="file" id="uploadedMedia" class="media" accept="image/*, video/*, audio/*" multiple><br>
@@ -98,6 +99,7 @@
                 </section>
         </section>
     </main>
+
     <footer class="footer">
         <nav>
             <a href="PrivacyPolicy.html">Privacy Policy</a>
@@ -107,5 +109,10 @@
         </nav><br>
         <p>© 2024 ALERTNET INC, All Rights Reserved</p>
     </footer>
+
+    <div class="mobile-message hidden">
+        Content for your screensize is not available for now <br> Please view on a laptop
+    </div>
+    
 </body>
 </html>

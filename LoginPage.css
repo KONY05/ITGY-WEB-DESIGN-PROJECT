@@ -15,6 +15,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.hidden{
+    display: none !important;
+}
+
 /* Background and centering */
 body {
     display: flex;
@@ -154,4 +158,31 @@ input{
 .bottom a{
     text-wrap: nowrap;
     font-weight: bold;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    body {
+        background-color: white;
+        color: red;
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        }
+
+    .mobile-message {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        margin: 0;
+        display: block !important;
+    }
+
+    .login-container{
+        display: none; /* Hide header, main, and footer on mobile */
+    }
 }

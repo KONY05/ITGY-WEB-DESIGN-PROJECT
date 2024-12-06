@@ -20,12 +20,17 @@ const reportUrgency = document.querySelector('.rep_urg');
 const reportLocation = document.querySelector('.rep_loc');
 const reportTime = document.querySelector('.rep_time');
 
+// COUNTER VARIABLES
+const counterUp = document.querySelector('#counterUp');
+const counterDown = document.querySelector('#counterDown');
+
 class ApplicatonPage{
     constructor(){
         this._getLocation();
         submitBtn.addEventListener('click', this._confirmReport.bind(this));
-        // media.addEventListener('change', this._getMedia.bind(this));
         classification.addEventListener('change', this._showSusActivity.bind(this));
+        description.addEventListener('keydown', this._counter);
+        document.querySelector('body').addEventListener('keydown', this._buttonClick.bind(this));
     };
 
     _confirmReport(e) {
@@ -45,6 +50,36 @@ class ApplicatonPage{
         console.log('Form submitted successfully');
     }
 
+    _buttonClick(e){
+        // Check if the Enter key was pressed
+        if (e.key === 'Enter') {
+            this._confirmReport(e);
+        }
+    }
+
+    _counter(){
+        const length = description.value.length;
+        
+        const end = 150 - length; // Calculate remaining characters
+        counterUp.textContent = length; // Update the characters input count
+        counterDown.textContent = end; // Update the characters remaining count
+    
+        // Conditional styling based on input length
+        if (length >= 100) {
+            counterUp.style.color = "red"; // Change counterUp to red when nearing the limit
+        
+            if (length >= 150) {
+                counterUp.style.color = "rgb(16, 230, 16)"; // Change color of counterUp to green
+                counterDown.style.color = "red"; // Change color of counterDown to red
+            } else {
+                counterDown.style.color = ""; // Reset color
+            }
+        } else {
+            counterUp.style.color = ""; // Reset color
+            counterDown.style.color = ""; // Reset color
+        }
+    }
+
     _clearForm(){
         description.value = '';
         media.value = '';
@@ -54,6 +89,9 @@ class ApplicatonPage{
         urgency.value = 'critical';
 
         sus_activity.classList.add('hidden')
+
+        counterDown.textContent = 150; 
+        counterUp.textContent = 0;
     }
 
     async _getLocation() {
@@ -82,7 +120,7 @@ class ApplicatonPage{
             }
     
             const data = await response.json();
-            console.log(data);
+            // console.log(data);
             
     
             if (data.features && data.features.length > 0) {

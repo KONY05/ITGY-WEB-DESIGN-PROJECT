@@ -21,6 +21,10 @@ a:visited{
     color: inherit;
 }
 
+.hidden{
+    display: none !important;
+}
+
 /* Header Styling */
 .header {
     background-color: var(--header-color);
@@ -104,7 +108,12 @@ table th, table td {
     border: 1px solid var(--black);
     padding: 8px;
     text-align: left;
-  }
+}
+
+.desc{
+    width: 50%;
+    text-wrap:wrap;
+}
 
 /* Footer Section */
 footer{
@@ -144,4 +153,31 @@ footer nav a:hover{
 
 footer p{
     margin: 25px 0;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    body {
+        background-color: white;
+        color: red;
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        }
+
+    .mobile-message {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        margin: 0;
+        display: block !important;
+    }
+
+    .header, main, footer {
+        display: none; /* Hide header, main, and footer on mobile */
+    }
 }
