@@ -3,11 +3,18 @@ require 'db.php'; // Include your database connection file
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user_id = 1; // Replace with the logged-in user's ID (e.g., from session)
-    $description = $_POST['incidentDesc'];
+    $description = $_POST['description'];
     $classification = $_POST['classification'];
     $urgency_level = $_POST['urgency_level'];
     $location = $_POST['location'];
     $time = $_POST['time'];
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        echo "<pre>";
+        print_r($_POST);
+        echo "</pre>";
+        exit();
+    }
 
     // Handle file upload
     $target_dir = "uploads/"; // Directory where files will be saved

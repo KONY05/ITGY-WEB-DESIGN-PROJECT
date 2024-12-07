@@ -46,14 +46,14 @@
                 <div class="reportInfo">
                     <form action="submit_incident.php" method="POST" enctype="multipart/form-data" class="reportForm">
                         <label for="description">Describe the incident</label><br>
-                        <textarea name="incidentDesc" id="description" placeholder="Provide a description..." rows="5" maxlength="150"></textarea>
+                        <textarea name="description" id="description" placeholder="Provide a description..." rows="5" maxlength="150"></textarea>
                         <p class="para">You have used <span id="counterUp">0</span> out of <span id="counterDown">150</span> letters</p><br>
     
                         <label for="uploadedMedia">Upload Media(Photo, Videos, Audio):</label><br>
-                        <input type="file" id="uploadedMedia" class="media" accept="image/*, video/*, audio/*" multiple><br>
+                        <input type="file" name="media" id="uploadedMedia" class="media" accept="image/*, video/*, audio/*" multiple><br>
     
                         <label for="inicidentClass">Incident Classification</label><br>
-                        <select class="classify">
+                        <select name="classification" class="classify">
                             <option value="terrorism">Terrorism</option>
                             <option value="kidnapping">Kidnapping</option>
                             <option value="robbery">Robbery</option>
@@ -63,17 +63,17 @@
                         <input type="text" name="activity_type" id="activity_type" class="sus_activity hidden" placeholder="Enter Suspicious Activity">
                         
                         <label for="urgencyLvl">Urgency Level</label><br>
-                        <select class="urgency">
+                        <select name="urgency" class="urgency">
                             <option value="critical">Critical</option> <!--Add colors to each option-->
                             <option value="moderate">Moderate</option>
                             <option value="low">Low</option>
                         </select><br>
     
                         <label for="location">Location</label><br>
-                        <input type="text" id="location" placeholder="Enter your location here..." value="📍"><br>
+                        <input type="text" name="location" id="location" placeholder="Enter your location here..." value="📍"><br>
     
                         <label for="time">Is this event happening right now?</label><br>
-                        <select class="time">
+                        <select name="time" class="time">
                             <option value="realTime">Real-Time</option>
                             <option value="not_real_time">Not Real-Time</option>
                         </select><br>

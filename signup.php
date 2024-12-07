@@ -9,6 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? null;
 
 
+    if (!$username || !$email || !$password) {
+        echo "All fields are required.";
+        exit();
+    }
+
     $hashed_password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
     $stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
@@ -18,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($stmt->execute()) {
         echo "Signup successful!";
         // Redirect to login page after successful signup
-        header("Location: LoginPage.html");
+        header("Location: ApplicationPage.html");
         exit();
     } else {
         echo "Error: " . $conn->error;
