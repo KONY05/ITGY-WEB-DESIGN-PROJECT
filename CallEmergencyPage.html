@@ -36,36 +36,43 @@
 
         <section id="emergencyInfo">
             <h2>Direct your emergency calls through <span id="hotline-txt">hotline</span></h2>
-            <p id="para">emergency hotline numbers in Nigeria</p>
+            <p id="para">emergency hotline numbers in Nigeria (click number to call)</p>
 
             <div class="hotline_container">
                 <div class="hotline_num"><a href="tel:+234112">
                     <p class="hotline_head">1. 112 - Nigeria toll-free number</p>
-                    <p>112 serves as Nigeria's official emergency helpline. Managed by NEMA (National Emergency Management Agency), this number provides assistance in both natural and man-made emergencies. When you dial 112, you’ll be connected to relevant emergency response units, including the police, fire service, road safety (FRSC), ambulance services, and more. It’s your direct line for immediate help in any critical situation.</p> </a>
+                    <p>112 serves as Nigeria's official emergency helpline. Managed by NEMA (National Emergency Management Agency), this number provides assistance in both natural and man-made emergencies. When you dial 112, you’ll be connected to relevant emergency response units, including the police, fire service, road safety (FRSC), ambulance services, and more. It’s your direct line for immediate help in any critical situation.</p></a>
                 </div>
-                <div class="hotline_num">
+                <div class="hotline_num"> <a href="tel:+234119">
                     <p class="hotline_head">2. 199, 08033011052, 08033183477 – Nigeria Police (Lagos)</p>
-                    <p>112 serves as Nigeria's official emergency helpline. Managed by NEMA (National Emergency Management Agency), this number provides assistance in both natural and man-made emergencies. When you dial 112, you’ll be connected to relevant emergency response units, including the police, fire service, road safety (FRSC), ambulance services, and more. It’s your direct line for immediate help in any critical situation.</p>
+                    <p>112 serves as Nigeria's official emergency helpline. Managed by NEMA (National Emergency Management Agency), this number provides assistance in both natural and man-made emergencies. When you dial 112, you’ll be connected to relevant emergency response units, including the police, fire service, road safety (FRSC), ambulance services, and more. It’s your direct line for immediate help in any critical situation.</p></a>
                 </div>
-                <div class="hotline_num">
+                <div class="hotline_num"> <a href="tel:+234767">
                     <p class="hotline_head">3. 767 -  Rapid Response Squad (RRS) for Lagos:</p>
-                    <p>Dial 767 or 112 to report crimes such as theft, robbery, or kidnapping in Lagos. By dialing their dedicated numbers, citizens can report ongoing incidents, suspicious activities, or imminent threats and receive immediate assistance.</p>
+                    <p>Dial 767 or 112 to report crimes such as theft, robbery, or kidnapping in Lagos. By dialing their dedicated numbers, citizens can report ongoing incidents, suspicious activities, or imminent threats and receive immediate assistance.</p></a>
                 </div>
             </div>
 
             <div class="contactForm">
                 <p id="contactHead">Leave a comment</p>
+
                 <form action="api/submit_contact.php" method="POST">
                     <label for="message">Your message</label><br>
-                    <textarea name="message" id="message" placeholder="type here" cols="60" rows="5" required></textarea><br>
+                    <textarea name="message" id="message" placeholder="Type here..." cols="60" rows="10" required></textarea><br>
 
-                    <label for="name">Your name</label><br>
-                    <input type="text" name="name" id="name" placeholder="Enter your name"><br>
-    
-                    <label for="email">Email address</label><br>
-                    <input type="email" name="email" id="email" placeholder="example@gmail.com" required><br>
-    
-                    <button id="submit">Send message</button>
+                    <div class="formFlex">
+                        <div class="userName">
+                            <label for="name">Your name</label><br>
+                            <input type="text" name="name" id="name" placeholder="Enter your name"><br>
+                        </div>
+        
+                        <div class="mail">
+                            <label for="email">Email address</label><br>
+                            <input type="email" name="email" id="email" placeholder="example@gmail.com" required><br>
+                        </div>
+
+                        <button id="submit">Send message</button>
+                    </div>
                 </form>
             </div>
         </section>

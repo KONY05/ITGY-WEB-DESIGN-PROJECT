@@ -21,12 +21,12 @@
     display: none !important;
 }
 
-/* 
+
 #active{
     padding: 5px 10px;
     border-radius: 5px;
     background-color: var(--signUp_bg);
-} */
+}
 
 a{
     color: inherit;
