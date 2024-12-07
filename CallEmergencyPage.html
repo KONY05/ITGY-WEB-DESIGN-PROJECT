@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Authorities now</title>
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="CallEmergencyPage.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <img src="img/logo.png" alt="AlertNet Logo" id="logoImg">
+        <nav class="nav">
+            <a href="HomePage.html" target="_self">Home</a>
+            <a href="AboutPage.html" target="_self">About</a>
+            <a href="ApplicationPage.html" target="_self">Report Now</a>
+            <a href="CallEmergencyPage.html" id="active">Make Emergency Call</a>
+            <a href="SafetyTipsPage.html" target="_self">Safety Tips</a>
+            <a href="IncidentsPage.html" target="_self">Incidents</a>
+            <a href="ContactPage.html" target="_self">Contact</a>
+        </nav>
+        <div class="header_btns">
+            <button id="login"><a href="LoginPage.html">Log In</a></button>
+            <button class="signup"><a href="SignupPage.html">Sign Up</a></button>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <section class="hero">
+            <h1>call emergency</h1>
+            <p>Your safety is our priority. Use this <br> platform to report emergencies or <br>suspicious activities. Your prompt action <br>could save lives and make our <br>community safer. Please provide <br>accurate details and contact the relevant <br> authorities for immediate assistance</p>
+            <button id="heroBtn"><a href="#emergencyInfo">Contact here &downarrow;</a></button>
+        </section>
+
+        <section id="emergencyInfo">
+            <h2>Direct your emergency calls through <span id="hotline-txt">hotline</span></h2>
+            <p id="para">emergency hotline numbers in Nigeria</p>
+
+            <div class="hotline_container">
+                <div class="hotline_num"><a href="tel:+234112">
+                    <p class="hotline_head">1. 112 - Nigeria toll-free number</p>
+                    <p>112 serves as Nigeria's official emergency helpline. Managed by NEMA (National Emergency Management Agency), this number provides assistance in both natural and man-made emergencies. When you dial 112, you’ll be connected to relevant emergency response units, including the police, fire service, road safety (FRSC), ambulance services, and more. It’s your direct line for immediate help in any critical situation.</p> </a>
+                </div>
+                <div class="hotline_num">
+                    <p class="hotline_head">2. 199, 08033011052, 08033183477 – Nigeria Police (Lagos)</p>
+                    <p>112 serves as Nigeria's official emergency helpline. Managed by NEMA (National Emergency Management Agency), this number provides assistance in both natural and man-made emergencies. When you dial 112, you’ll be connected to relevant emergency response units, including the police, fire service, road safety (FRSC), ambulance services, and more. It’s your direct line for immediate help in any critical situation.</p>
+                </div>
+                <div class="hotline_num">
+                    <p class="hotline_head">3. 767 -  Rapid Response Squad (RRS) for Lagos:</p>
+                    <p>Dial 767 or 112 to report crimes such as theft, robbery, or kidnapping in Lagos. By dialing their dedicated numbers, citizens can report ongoing incidents, suspicious activities, or imminent threats and receive immediate assistance.</p>
+                </div>
+            </div>
+
+            <div class="contactForm">
+                <p id="contactHead">Leave a comment</p>
+                <form action="api/submit_contact.php" method="POST">
+                    <label for="message">Your message</label><br>
+                    <textarea name="message" id="message" placeholder="type here" cols="60" rows="5" required></textarea><br>
+
+                    <label for="name">Your name</label><br>
+                    <input type="text" name="name" id="name" placeholder="Enter your name"><br>
+    
+                    <label for="email">Email address</label><br>
+                    <input type="email" name="email" id="email" placeholder="example@gmail.com" required><br>
+    
+                    <button id="submit">Send message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!--Footer Section-->
+    <footer>
+        <img src="img/logo.png" alt="ALERTNET logo">
+        <div class="footer_div">
+            <nav>
+                <a href="PrivacyPolicy.html">Privacy Policy</a>
+                <a href="SupportPage.html">Support</a>
+                <a href="AboutPage.html">About</a>
+            </nav>
+        </div>
+        <p>© 2024 ALERTNET INC, All Rights Reserved</p>
+    </footer>
+
+    <div class="mobile-message hidden">
+        Content for your screensize is not available for now <br> Please view on a laptop
+    </div>
+</body>
+</html>
