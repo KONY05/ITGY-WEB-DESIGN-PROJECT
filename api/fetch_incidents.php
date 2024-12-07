@@ -1,6 +1,7 @@
 <?php
 require 'db.php';
 
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 $stmt = $conn->prepare("SELECT * FROM incidents ORDER BY created_at DESC");
 $stmt->execute();
 $result = $stmt->get_result();
@@ -17,4 +18,5 @@ echo json_encode($incidents);
 
 $stmt->close();
 $conn->close();
+}
 ?>
