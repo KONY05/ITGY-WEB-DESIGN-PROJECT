@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 require 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -6,10 +8,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'] ?? null;
     $password = $_POST['password'] ?? null;
 
-    if (!$username || !$email || !$password) {
-        echo "All fields are required.";
-        exit();
-    }
 
     $hashed_password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 

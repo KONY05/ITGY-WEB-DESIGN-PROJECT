@@ -2,7 +2,7 @@
 async function fetchIncidents() {
     try {
         // Make a GET request to fetch_incidents.php
-        const response = await fetch('api/fetch_incidents.php');
+        const response = await fetch('fetch_incidents.php');
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
