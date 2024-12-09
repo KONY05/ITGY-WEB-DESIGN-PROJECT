@@ -6,6 +6,8 @@
     <title>Signup - Create Account</title>
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="SignupPage.css">
+
+    <script defer src="scripts/signup.js"></script>
 </head>
 <body>
     <div class="container">
@@ -13,11 +15,10 @@
         <div class="form-section">
             <h2>CREATE YOUR ACCOUNT</h2>
             <form action="api/signup.php" method="POST">
-                <input type="text" name="fullname" placeholder="Full name" required>
-                <input type="text" name="username" placeholder="Username" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <input type="password" name="confirmpassword" placeholder="Confirm Password" required>
+                <input type="text" id="username" name="username" placeholder="Username" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <input type="password" id="firstPass" name="password" placeholder="Password" required>
+                <input type="password" id="password" name="confirmpassword" placeholder="Confirm Password" required>
                 <button type="submit">Create Account</button>
                 <p><span id="question">Already have an account?</span> <a href="LoginPage.html">Log in</a></p>
             </form>

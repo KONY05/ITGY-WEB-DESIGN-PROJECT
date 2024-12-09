@@ -46,8 +46,35 @@ class ApplicatonPage{
     
         // If all fields are filled, you can proceed
         this._insertIncidents();
+        console.log(description.value, media.value, classification.value, urgency.value, userLocation.value, time.value);
+        
+        this._postIncidents({description: description.value, media: media.value, classification: classification.value, urgency_level: urgency.value, location: userLocation.value, time: time.value});
         this._clearForm();
         console.log('Form submitted successfully');
+    }
+
+    async _postIncidents(data = {}){
+        try {
+            const url = 'http://localhost/ITGY401PROJECT/api/submit_incident.php'
+            const response = await fetch(url, {
+              method: 'POST', // HTTP method
+              headers: {
+                'Content-Type': 'application/json' // Specify the content type
+              },
+              body: JSON.stringify(data) // Convert data to JSON string
+            });
+        
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+        
+            const result = await response.json(); // Parse JSON response
+            console.log('Success:', result);
+            return result;
+          } catch (error) {
+            console.error(`An error occured, ${error.message}`);
+            alert(`An error occured while submitting your incident: ${error.message}`);
+          }
     }
 
     _buttonClick(e){
@@ -174,7 +201,7 @@ class ApplicatonPage{
     }
 
     _showSusActivity(e){
-        if(e.target.value === "suspicious_activity"){
+        if(e.target.value === "suspicious activity"){
             sus_activity.classList.remove('hidden')
         }else{
             sus_activity.classList.add('hidden')
@@ -184,85 +211,3 @@ class ApplicatonPage{
 }
 
 const app = new ApplicatonPage();
-
-
-async function kony (){
-    try {
-        // Make a GET request to fetch_incidents.php
-        const response = await fetch('api/fetch_incidents.php');
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        // Parse the JSON response
-        const incidents = await response.json();
-        console.log('hello');
-        
-        console.log(incidents);
-        
-
-        // Select the container element
-        const container = document.getElementById('incidentContainer');
-        container.innerHTML = ''; // Clear existing content
-
-        // Loop through the incidents and create HTML for each
-        incidents.forEach(incident => {
-            const div = document.createElement('div');
-            div.classList.add('incident');
-            
-            div.innerHTML = `
-                <p><strong>ID:</strong> ${incident.id}</p>
-                <p><strong>Description:</strong> ${incident.description}</p>
-                <p><strong>Classification:</strong> ${incident.classification}</p>
-                <p><strong>Urgency Level:</strong> ${incident.urgency_level}</p>
-                <p><strong>Location:</strong> ${incident.location}</p>
-                <p><strong>Time:</strong> ${incident.time}</p>
-                ${incident.media_url ? `<img src="${incident.media_url}" alt="Incident Media" style="max-width: 300px;">` : ''}
-            `;
-            container.appendChild(div);
-        });
-    } catch (error) {
-        console.error('Error fetching incidents:', error);
-    }
-}
-
-kony();
-
-
-//  _getMedia(ev){
-//         // fix error occurring here
-//         const files = ev.target.files; // Get selected files
-        
-//         // Loop through each selected file and display it
-//         for (const file of files) {
-//             const fileReader = new FileReader();
-    
-//             fileReader.onload = function (e) {
-//                 const fileType = file.type;
-    
-//                 if (fileType.startsWith('image/')) {
-//                     // Display image
-//                     const img = document.createElement('img');
-//                     img.src = e.target.result;
-//                     img.style.width = '50px'; // Resize the image
-//                     return img;
-//                 } else if (fileType.startsWith('video/')) {
-//                     // Display video
-//                     const video = document.createElement('video');
-//                     video.src = e.target.result;
-//                     video.controls = true;
-//                     video.style.width = '200px'; // Resize the video
-//                     // filePreview.appendChild(video);
-//                 } else if (fileType.startsWith('audio/')) {
-//                     // Display audio
-//                     const audio = document.createElement('audio');
-//                     audio.src = e.target.result;
-//                     audio.controls = true;
-//                     // filePreview.appendChild(audio);
-//                 }
-//             };
-    
-//             // Read the file as a data URL
-//             fileReader.readAsDataURL(file);
-//         }
-// };

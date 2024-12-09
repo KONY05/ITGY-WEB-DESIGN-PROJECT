@@ -6,6 +6,8 @@
     <title>Application Page</title>
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="ApplicationPage.css">
+
+    <script defer src="scripts/login.js"></script>
     <script defer src="scripts/Application.js"></script>
 </head>
 <body>
@@ -26,7 +28,7 @@
         </div>
     </header>
 
-    <header class="header hidden">
+    <!-- <header class="header">
         <a href="HomePage.html" target="_blank"><img src="img/logo.png" alt="AlertNet Logo" id="logoImg"></a>
         <nav class="nav">
             <a href="HomePage.html" target="_self">Home</a>
@@ -37,7 +39,7 @@
         <div class="userSec">
             <img src="img/dummy profileImg.png" alt="">
         </div>
-    </header>
+    </header> -->
 
     <!-- Main Application -->
     <main>
@@ -46,7 +48,7 @@
                 <h1>report suspicious activity</h1>
     
                 <div class="reportInfo">
-                    <form action="api/submit_incident.php" method="POST" enctype="multipart/form-data" class="reportForm">
+                    <form id="incidentForm" action="api/submit_incident.php" method="post" enctype="multipart/form-data" class="reportForm">
                         <label for="description">Describe the incident</label><br>
                         <textarea name="description" id="description" placeholder="Provide a description..." rows="5" maxlength="150"></textarea>
                         <p class="para">You have used <span id="counterUp">0</span> out of <span id="counterDown">150</span> letters</p><br>
@@ -60,7 +62,7 @@
                             <option value="kidnapping">Kidnapping</option>
                             <option value="robbery">Robbery</option>
                             <option value="assault">Assault</option>
-                            <option value="suspicious_activity">Suspicious Activity</option>
+                            <option value="suspicious activity">Suspicious Activity</option>
                         </select><br>
                         <input type="text" name="activity_type" id="activity_type" class="sus_activity hidden" placeholder="Enter Suspicious Activity">
                         
@@ -76,8 +78,8 @@
     
                         <label for="time">Is this event happening right now?</label><br>
                         <select name="time" class="time">
-                            <option value="realTime">Real-Time</option>
-                            <option value="not_real_time">Not Real-Time</option>
+                            <option value="Real Time">Real-Time</option>
+                            <option value="Not real time">Not Real-Time</option>
                         </select><br>
     
                         <button type="submit" id="submit">Submit Report</button>

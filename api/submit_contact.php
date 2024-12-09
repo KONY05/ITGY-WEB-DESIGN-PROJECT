@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($stmt->execute()) {
         echo "Thank you for contacting us!";
         // Redirect to a thank-you page or back to the contact page
-        header("Location: ContactPage.html");
+        header("Location: /ITGY401PROJECT/HomePage.html");
         exit();
     } else {
         echo "Error: " . $conn->error;

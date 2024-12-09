@@ -21,9 +21,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Redirect based on user role
         if ($user['is_admin']) {
-            header("Location: AdminPage.html");
+            header("Location: /ITGY401PROJECT/AdminPage.html");
         } else {
-            header("Location: ApplicationPage.html");
+            header("Location: /ITGY401PROJECT/ApplicationPage.html");
         }
         exit();
     } else {

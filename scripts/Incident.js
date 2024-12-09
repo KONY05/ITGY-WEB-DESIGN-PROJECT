@@ -12,6 +12,10 @@ const overlay = document.querySelector('.overlay');
 const popup = document.querySelector('.addInfo_modalView');
 const textarea = document.querySelector('#addInfo_modal');
 
+const incidentsContainer = document.querySelector('.incidentContainer');
+
+let jsonData;
+
 class IncidentPage{
     // Declare class properties outside the constructor
     text = "✓ Information added"; // Default text
@@ -19,27 +23,33 @@ class IncidentPage{
     activeTextElements = new Map(); // Map to track active text elements
 
     constructor(){
-        this._getLocation();
-        addInfo_btns.forEach(button => 
-            button.addEventListener('click', this._openPopUp.bind(this)));
+        // Initialize the last clicked button
+        this.lastClickedButton = null;
 
-        [cancelBtn, overlay].forEach(el => 
-            el.addEventListener('click', this._closePopUp.bind(this)));
+        this._getLocation();
+        this._getIncidents();
+
+        [cancelBtn, overlay].forEach(el => el.addEventListener('click', this._closePopUp.bind(this)));
 
         // Bind the close button to handle the modal close and text creation
         closeBtn.addEventListener('click', this._handleModalClose.bind(this));
 
-        // Store the button last clicked in the NodeList
-        this.lastClickedButton = null;
+        // Event delegation for dynamically created elements
+        incidentsContainer.addEventListener('click', this._incidentsContainerHandler.bind(this));
+    }
 
-        // Add event listeners to all "Add Info" buttons to track the clicked button
-        addInfo_btns.forEach((button) =>
-            button.addEventListener('click', (e) => {
+    _incidentsContainerHandler(e){
+            if (e.target.classList.contains('add_info')) {
                 this.lastClickedButton = e.target;
-            })
-        );
+            }
 
-        verifyBtn.addEventListener('click', this._verifyAlert.bind(this));
+            if (e.target.classList.contains('verify')) {
+                this._verifyAlert(e);
+            }
+
+            if (e.target.classList.contains('add_info')) {
+                this._openPopUp(e);
+            }
     }
 
     async _getLocation() {
@@ -68,8 +78,6 @@ class IncidentPage{
             }
     
             const data = await response.json();
-            // console.log(data);
-            
     
             if (data.features && data.features.length > 0) {
                 const address = data.features[0].properties['address_line1'];
@@ -83,6 +91,68 @@ class IncidentPage{
         } catch (error) {
             console.error("An error occurred:", error.message);
             alert(`Error: ${error.message}`);
+        }
+    }
+
+    async _getIncidents(){
+        try {
+            const response = await fetch('https://localhost/ITGY401PROJECT/api/fetch_incidents.php');
+
+            if (!response.ok) {
+                throw new Error(`Error fetching incidents: ${response.status}`);
+            }
+
+            const data = await response.json();
+            jsonData = data;
+            
+            this._insertIncident();
+
+        } catch (error) {
+            console.error("Error occured while fetching incidents", error.message);
+        }
+    }
+
+    _insertIncident(){
+        // console.log(jsonData);
+        
+        const date = new Date();
+        
+        jsonData.forEach(el => {
+            const html = `<div class="incident">
+            <p class="inc_head">${el.classification}</p>
+            <p class="inc_loc">${el.location}</p>
+            <p class="inc_time">${this._calcTimeDifference(date, el.created_at)}</p>
+            <p class="inc_urg ${el.urgency_level}">urgency: <span>${el.urgency_level}</span></p>
+
+            <div class="bottom_btns">
+                <button class="verify">verify</button>
+                <button class="add_info">add information</button>
+            </div>
+        </div>`;
+    
+        incidentsContainer.insertAdjacentHTML('beforeend', html);
+        });
+    }
+
+    _calcTimeDifference(currentDate, targetDate){
+         // Parse the target date string into a Date object
+        const target = new Date(targetDate)
+        
+        // Calculate the difference in milliseconds
+        const diffInMs = Math.abs(currentDate - target);
+        
+        // Convert milliseconds to minutes, hours, and days
+        const diffInMinutes = Math.round(diffInMs / (1000 * 60));
+        const diffInHours = Math.round(diffInMs / (1000 * 60 * 60));
+        const diffInDays = Math.round(diffInMs / (1000 * 60 * 60 * 24));
+        
+        // Determine the most appropriate unit to return
+        if (diffInMinutes < 60) {
+            return `Reported ${diffInMinutes} minute${diffInMinutes === 1 ? '' : 's'} ago`;
+        } else if (diffInHours < 24) {
+            return `Reported ${diffInHours} hour${diffInHours === 1 ? '' : 's'} ago`;
+        } else {
+            return `Reported ${diffInDays} day${diffInDays === 1 ? '' : 's'} ago`;
         }
     }
 

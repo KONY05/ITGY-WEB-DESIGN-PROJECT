@@ -152,6 +152,18 @@ h1, #para, .inc_urg, .verify, .add_info, h3, .closeBtn{
     font-weight: 500;
 }
 
+.critical{
+    color: red; 
+}
+
+.low{
+    color: var(--verify_btn);
+}
+
+.moderate{
+    color: rgb(214, 214, 90);
+}
+
 .bottom_btns{
     margin-top: 8px;
     display: flex;

@@ -41,7 +41,7 @@ a:visited{
 }
 
 /* Header & Nav Section */
-.header {
+.header{
     background-color: var(--header-color);
     color: var(--white);
     padding: 15px 30px;

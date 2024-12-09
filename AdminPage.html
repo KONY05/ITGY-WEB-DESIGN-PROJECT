@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="AdminPage.css">
+    <link rel="stylesheet" href="Admin.css">
+
+    <script defer src="scripts/login.js"></script>
+    <script defer src="scripts/adminPage.js"></script>
 </head>
 <body>
     <!-- Header Section -->
@@ -24,15 +27,13 @@
         <h1>Admin Dashboard - Incident Reports</h1>
         <p id="main_p">Manage, categorize and monitor reported incidents</p>   
         <div class="filter">
-            <label for="category">Filter by category:</label>
-            <select id="category">
-                <option value="all_incidents">All Incidents</option>
-                <option value="terrorism">Terrorism</option>
-                <option value="kidnapping">Kidnapping</option>
-                <option value="robbery">Robbery</option>
-                <option value="assault">Assault</option>
-                <option value="suspicious_activity">Suspicious Activity</option>
-            </select>
+            <label for="urgency">Filter by urgency:</label>
+            <select name="urgency" class="urgency">
+              <option value="all_incidents">All Incidents</option>
+              <option value="critical">Critical</option>
+              <option value="moderate">Moderate</option>
+              <option value="low">Low</option>
+          </select>
           </div>
 
           <!-- Incident Report Section -->
@@ -43,24 +44,24 @@
                     <th>ID</th>
                     <th>Date</th>
                     <th>Location</th>
-                    <th>Category</th>
+                    <th>Urgency</th>
                     <th>Description</th>
+                    <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>001</td>
-                    <td>2024-10-28</td>
-                    <td>Dremo</td>
+                  <!-- <tr>
+                    <td>${el.id}</td>
+                    <td>${el.created_at}</td>
+                    <td>${el.location}</td>
+                    <td>${el.urgency_level}</td>
+                    <td class="desc">${el.description}</td>
                     <td>
-                      <select>
-                        <option selected>Terrorism</option>
-                        <option>Kidnapping</option>
-                      </select>
+                      <button class="deleteBtn">Delete</button>
                     </td>
-                    <td class="desc">Forward chaining and Backward chaining are two strategies used in developing expert systems for. Forward chaining is a method in AI that uses existing</td>
-                  </tr>
-                  <tr>
+                  </tr> -->
+
+                  <!-- <tr>
                     <td>002</td>
                     <td>2024-11-08</td>
                     <td>Daniel</td>
@@ -83,11 +84,11 @@
                       </select>
                     </td>
                     <td>Reported a kidnapping incident at Festac</td>
-                  </tr>
+                  </tr> -->
                 </tbody>
               </table>
            </section>
-           <script src="scripts/fetch_incidents.js"></script>
+           <!-- <script src="scripts/fetch_incidents.js"></script> -->
     </main>
 
     <!--Footer Section-->

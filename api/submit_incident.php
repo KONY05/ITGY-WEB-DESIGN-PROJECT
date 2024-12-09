@@ -1,47 +1,64 @@
 <?php
-require 'db.php'; // Include your database connection file
+require 'db.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $user_id = 1; // Replace with the logged-in user's ID (e.g., from session)
-    $description = $_POST['description'];
-    $classification = $_POST['classification'];
-    $urgency_level = $_POST['urgency_level'];
-    $location = $_POST['location'];
-    $time = $_POST['time'];
+header("Content-Type: application/json");
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+header('Content-Type: application/json'); // Ensure JSON response
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        echo "<pre>";
-        print_r($_POST);
-        echo "</pre>";
+try {
+    // Parse the JSON input
+    $inputData = json_decode(file_get_contents("php://input"), true);
+
+    // Validate required fields
+    if (
+        empty($inputData['description']) || 
+        empty($inputData['classification']) || 
+        empty($inputData['urgency_level']) || 
+        empty($inputData['location']) || 
+        empty($inputData['time'])
+    ) {
+        echo json_encode(['status' => 'error', 'message' => 'All fields are required.']);
         exit();
     }
 
-    // Handle file upload
-    $target_dir = "uploads/"; // Directory where files will be saved
+    // Extract fields from the input data
+    $description = $inputData['description'];
+    $classification = $inputData['classification'];
+    $urgency_level = $inputData['urgency_level'];
+    $location = $inputData['location'];
+    $time = $inputData['time'];
     $media_path = null;
 
+    // Handle file uploads if media is provided
     if (!empty($_FILES['media']['name'])) {
-        $target_file = $target_dir . basename($_FILES["media"]["name"]);
-        if (move_uploaded_file($_FILES["media"]["tmp_name"], $target_file)) {
-            $media_path = $target_file; // Save file path
-        } else {
-            echo "Error uploading file.";
+        $target_dir = "../uploads/"; // Adjust the directory as needed
+        $media_path = $target_dir . basename($_FILES["media"]["name"]);
+
+        if (!move_uploaded_file($_FILES["media"]["tmp_name"], $media_path)) {
+            echo json_encode(['status' => 'error', 'message' => 'File upload failed.']);
             exit();
         }
     }
 
-    // Insert incident into the database
-    $stmt = $conn->prepare("INSERT INTO incidents (user_id, description, media_url, classification, urgency_level, location, time) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("issssss", $user_id, $description, $media_path, $classification, $urgency_level, $location, $time);
+    // Prepare the SQL statement
+    $stmt = $conn->prepare("INSERT INTO incidents (description, media_url, classification, urgency_level, location, time) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssss", $description, $media_path, $classification, $urgency_level, $location, $time);
 
+    // Execute the query and handle results
     if ($stmt->execute()) {
-        echo "Incident reported successfully!";
-        header("Location: ApplicationPage.html");
-        exit();
+        echo json_encode(['status' => 'success', 'message' => 'Incident reported successfully.']);
     } else {
-        echo "Error: " . $conn->error;
+        echo json_encode(['status' => 'error', 'message' => 'Database insertion failed: ' . $stmt->error]);
     }
+
     $stmt->close();
     $conn->close();
+
+} catch (Exception $e) {
+    // Catch any other errors
+    echo json_encode(['status' => 'error', 'message' => 'An unexpected error occurred: ' . $e->getMessage()]);
+    exit();
 }
 ?>
