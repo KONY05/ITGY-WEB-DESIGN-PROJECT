@@ -14,12 +14,12 @@ async function checkDb(username, password) {
         console.log('Password:', password);
 
         // Ensure you're sending a POST request
-        const response = await fetch('api/login.php', {
+        const response = await fetch('https://localhost/ITGY401PROJECT/api/login.php', {
             method: 'POST',  // POST method
             headers: {
                 'Content-Type': 'application/json'  // Sending JSON data
             },
-            body: JSON.stringify({ username, password })  // Sending the login data
+            body: JSON.stringify({ username: username, password: password })  // Sending the login data
         });
 
         if (!response.ok) {
@@ -74,7 +74,7 @@ function checkUserState() {
                 </nav>
                 <div class="userSec">
                     <img src="img/dummy profileImg.png" alt="">
-                    <span>Welcome, ${user.username} (${user.role})</span>
+                    <span>Welcome, ${user.username})</span>
                 </div>
             </header>
         `;

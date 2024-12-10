@@ -1,4 +1,9 @@
 <?php
+
+header("Access-Control-Allow-Origin: http://localhost");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
 session_start();
 require 'db.php';
 
@@ -27,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         exit();
     } else {
-        echo "Invalid username or password.";
+        echo json_encode ("Invalid username or password.");
     }
 
     $stmt->close();
