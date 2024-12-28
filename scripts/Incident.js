@@ -134,20 +134,23 @@ class IncidentPage{
         });
     }
 
-    _calcTimeDifference(currentDate, targetDate){
-         // Parse the target date string into a Date object
-        const target = new Date(targetDate)
+    _calcTimeDifference(currentDate, targetDate) {
+        // Parse the target date string into a Date object
+        const target = new Date(targetDate);
         
         // Calculate the difference in milliseconds
         const diffInMs = Math.abs(currentDate - target);
         
-        // Convert milliseconds to minutes, hours, and days
+        // Convert milliseconds to seconds, minutes, hours, and days
+        const diffInSeconds = Math.round(diffInMs / 1000);
         const diffInMinutes = Math.round(diffInMs / (1000 * 60));
         const diffInHours = Math.round(diffInMs / (1000 * 60 * 60));
         const diffInDays = Math.round(diffInMs / (1000 * 60 * 60 * 24));
         
         // Determine the most appropriate unit to return
-        if (diffInMinutes < 60) {
+        if (diffInSeconds < 60) {
+            return `Reported ${diffInSeconds} second${diffInSeconds === 1 ? '' : 's'} ago`;
+        } else if (diffInMinutes < 60) {
             return `Reported ${diffInMinutes} minute${diffInMinutes === 1 ? '' : 's'} ago`;
         } else if (diffInHours < 24) {
             return `Reported ${diffInHours} hour${diffInHours === 1 ? '' : 's'} ago`;
@@ -155,6 +158,7 @@ class IncidentPage{
             return `Reported ${diffInDays} day${diffInDays === 1 ? '' : 's'} ago`;
         }
     }
+    
 
     _openPopUp(){
         document.querySelector('body').classList.add('body_overlay');
