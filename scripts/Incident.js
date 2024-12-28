@@ -96,7 +96,7 @@ class IncidentPage{
 
     async _getIncidents(){
         try {
-            const response = await fetch('https://localhost/ITGY401PROJECT/api/fetch_incidents.php');
+            const response = await fetch('http://localhost/ITGY401PROJECT/api/fetch_incidents.php');
 
             if (!response.ok) {
                 throw new Error(`Error fetching incidents: ${response.status}`);

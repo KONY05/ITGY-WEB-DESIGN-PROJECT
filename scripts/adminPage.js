@@ -7,7 +7,7 @@ let jsonData = []; // To store all incidents initially
 
 async function fetchIncidents() {
     try {
-        const response = await fetch('https://localhost/ITGY401PROJECT/api/fetch_incidents.php');
+        const response = await fetch('http://localhost/ITGY401PROJECT/api/fetch_incidents.php');
 
         if (!response.ok) {
             throw new Error(`Error fetching incidents: ${response.status}`);
@@ -78,7 +78,7 @@ async function deleteIncident(e){
       if (confirm('Are you sure you want to delete this product?')) {
         try {
           // Send DELETE request to the backend
-          const response = await fetch('https://localhost/ITGY401PROJECT/api/delete_incident.php', {
+          const response = await fetch('http://localhost/ITGY401PROJECT/api/delete_incident.php', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json', // Set the content type to JSON
